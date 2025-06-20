@@ -1,0 +1,47 @@
+# Development files
+.github/
+examples/
+node_modules/
+.vscode/
+.git/
+.gitignore
+
+# Development scripts and configs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# Documentation (already included via files field)
+CONTRIBUTING.md
+POSITIONING.md
+PUBLISHING.md
+MIGRATION.md
+
+# Only include what's specified in package.json "files" field:
+# - dist/
+# - src/
+# - README.md
+# - LICENSE
+# - LEGAL.md
