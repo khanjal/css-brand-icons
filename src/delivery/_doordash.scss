@@ -2,75 +2,117 @@
 
 /**
  * DoorDash Logo - CSS Interpretation
- * Red delivery bag inspired design
+ * Iconic red "D" shape design
  */
 
 .logo.doordash {
+  @include mixins.logo-base();
   background: var(--doordash-red);
-  border-radius: 12%;
   position: relative;
+  overflow: hidden;
   
+  // Create the distinctive "D" shape using clip-path
+  clip-path: polygon(
+    0% 0%,      /* Top left */
+    70% 0%,     /* Top edge */
+    85% 10%,    /* Upper right curve start */
+    95% 25%,    /* Right curve */
+    100% 50%,   /* Right middle */
+    95% 75%,    /* Right curve */
+    85% 90%,    /* Lower right curve */
+    70% 100%,   /* Bottom edge */
+    0% 100%     /* Bottom left back to start */
+  );
+  
+  // Inner cutout to create the "D" hollow
   &::before {
-    @include mixins.pseudo-element();
     content: '';
     position: absolute;
-    top: 20%;
-    left: 20%;
-    width: 60%;
-    height: 60%;
+    top: 25%;
+    left: 15%;
+    width: 50%;
+    height: 50%;
     background: white;
-    border-radius: 8%;
-    box-shadow: inset 0 0 0 2px var(--doordash-red);
+    border-radius: 0 50% 50% 0;
   }
   
-  &::after {
-    content: '';
-    position: absolute;
-    top: 35%;
-    left: 35%;
-    width: 30%;
-    height: 30%;
-    background: var(--doordash-red);
-    border-radius: 50%;
+  // Alternative implementation using border-radius for better browser support
+  &.rounded {
+    clip-path: none;
+    border-radius: 0 50% 50% 0;
+    
+    &::before {
+      display: none;
+    }
+  }
+  
+  // Simplified version using just border-radius
+  &.simple {
+    clip-path: none;
+    border-radius: 0 100% 100% 0;
+    
+    &::before {
+      display: none;
+    }
   }
   
   // Size variants
   &.icon {
-    border-radius: 16%;
-    
-    &::before {
-      border-radius: 12%;
-    }
+    clip-path: polygon(
+      0% 0%,
+      65% 0%,
+      80% 15%,
+      90% 30%,
+      95% 50%,
+      90% 70%,
+      80% 85%,
+      65% 100%,
+      0% 100%
+    );
   }
   
   &.large, &.xl {
-    border-radius: 8%;
-    
-    &::before {
-      border-radius: 4%;
-    }
+    clip-path: polygon(
+      0% 0%,
+      75% 0%,
+      87% 8%,
+      96% 22%,
+      100% 50%,
+      96% 78%,
+      87% 92%,
+      75% 100%,
+      0% 100%
+    );
   }
   
   // Color variants
   &.white {
     background: white;
-    border: 2px solid var(--doordash-red);
+    border: 3px solid var(--doordash-red);
     
     &::before {
       background: var(--doordash-red);
-      box-shadow: none;
-    }
-    
-    &::after {
-      background: white;
     }
   }
   
   &.black {
     background: var(--logo-black);
-    
-    &::after {
-      background: var(--logo-black);
-    }
+  }
+  
+  // Gradient variant
+  &.gradient {
+    background: linear-gradient(
+      135deg,
+      var(--doordash-red) 0%,
+      #e60023 50%,
+      #cc001f 100%
+    );
+  }
+  
+  // 3D effect
+  &.shadow {
+    box-shadow: 
+      0 4px 12px rgba(255, 99, 71, 0.3),
+      inset 0 2px 4px rgba(255, 255, 255, 0.1);
   }
 }

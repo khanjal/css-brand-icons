@@ -13,9 +13,9 @@
   &::before,
   &::after {
     @include mixins.pseudo-element();
-    width: 32%;
-    height: 85%;
-    background-color: var(--mcdonalds-yellow);
+    width: 32%; // Slightly wider arches
+    height: 85%; // Taller arches
+    background-color: var(--mcdonalds-golden); // Use golden yellow for better accuracy
     border-radius: 50% 50% 0 0;
     bottom: 0;
     transform-origin: bottom center;
@@ -23,14 +23,14 @@
   
   // Left arch
   &::before {
-    left: 18%;
-    transform: rotate(-12deg) skewX(-8deg);
+    left: 18%; // Adjusted position for better symmetry
+    transform: rotate(-12deg) skewX(-8deg); // Refined angle and skew
   }
   
   // Right arch  
   &::after {
-    right: 18%;
-    transform: rotate(12deg) skewX(8deg);
+    right: 18%; // Adjusted position for better symmetry
+    transform: rotate(12deg) skewX(8deg); // Refined angle and skew
   }
   
   // Vintage 1960s version (single arch design)

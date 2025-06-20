@@ -1,63 +1,107 @@
+@use '../mixins' as mixins;
+
 /**
  * Pizza Hut Logo - CSS Interpretation
- * Red hat/roof inspired design
+ * Classic red "hut" roof design
  */
 
 .logo.pizza-hut {
+  @include mixins.logo-base();
   background: var(--pizza-hut-red);
-  border-radius: 20% 20% 50% 50%;
   position: relative;
+  overflow: hidden;
   
-  &::before {
-    content: '';
-    position: absolute;
-    top: 30%;
-    left: 25%;
-    width: 50%;
-    height: 40%;
-    background: white;
-    border-radius: 10%;
+  // Create the classic "hut" roof shape
+  clip-path: polygon(
+    50% 0%,     /* Top center point */
+    85% 25%,    /* Upper right slope */
+    100% 40%,   /* Right edge start */
+    100% 100%,  /* Bottom right */
+    0% 100%,    /* Bottom left */
+    0% 40%,     /* Left edge start */
+    15% 25%     /* Upper left slope */
+  );
+  
+  // Alternative implementation for better browser support
+  &.fallback {
+    clip-path: none;
+    border-radius: 0;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: var(--pizza-hut-red);
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      background: var(--pizza-hut-red);
+    }
   }
   
-  &::after {
-    content: '';
-    position: absolute;
-    top: 40%;
-    left: 35%;
-    width: 30%;
-    height: 20%;
-    background: var(--pizza-hut-red);
-    border-radius: 50%;
+  // Size variants with adjusted proportions
+  &.icon {
+    clip-path: polygon(
+      50% 5%,
+      80% 30%,
+      100% 45%,
+      100% 100%,
+      0% 100%,
+      0% 45%,
+      20% 30%
+    );
+  }
+  
+  &.large, &.xl {
+    clip-path: polygon(
+      50% 0%,
+      90% 20%,
+      100% 35%,
+      100% 100%,
+      0% 100%,
+      0% 35%,
+      10% 20%
+    );
   }
   
   // Color variants
   &.white {
     background: white;
-    border: 2px solid var(--pizza-hut-red);
-    
-    &::before {
-      background: var(--pizza-hut-red);
-      border: none;
-    }
-    
-    &::after {
-      background: white;
-    }
+    border: 3px solid var(--pizza-hut-red);
   }
   
   &.black {
     background: var(--logo-black);
-    
-    &::after {
-      background: var(--logo-black);
-    }
   }
   
   &.yellow {
     background: var(--pizza-hut-yellow);
-    
-    &::after {
-      background: var(--pizza-hut-yellow);
-    }
+  }
+  
+  // Vintage style with gradient
+  &.vintage {
+    background: linear-gradient(
+      180deg,
+      var(--pizza-hut-red) 0%,
+      #c41e3a 50%,
+      #a01729 100%
+    );
+  }
+  
+  // 3D effect variant
+  &.shadow {
+    box-shadow: 
+      0 4px 8px rgba(0, 0, 0, 0.2),
+      inset 0 2px 4px rgba(255, 255, 255, 0.1);
   }
 }

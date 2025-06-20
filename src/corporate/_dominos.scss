@@ -2,77 +2,135 @@
 
 /**
  * Domino's Pizza Logo - CSS Interpretation
- * Blue and red domino-inspired design
+ * Tilted domino tile with red top section (1 dot) and blue bottom section (2 dots)
  */
 
 .logo.dominos {
-  background: var(--dominos-blue);
+  @include mixins.logo-base();
+  background: var(--dominos-red);
   border-radius: 15%;
+  transform: rotate(25deg);
   position: relative;
-  
+  overflow: hidden;
+
+  // Blue bottom section
   &::before {
     content: '';
     position: absolute;
-    top: 20%;
-    left: 20%;
-    width: 60%;
-    height: 60%;
-    background: var(--dominos-red);
-    border-radius: 10%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: var(--dominos-blue);
+    clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 100%);
   }
-  
+
+  // White separator line
   &::after {
     content: '';
     position: absolute;
-    top: 35%;
-    left: 35%;
-    width: 10%;
-    height: 10%;
+    top: 48%;
+    left: 0;
+    right: 0;
+    height: 4%;
+    background: white;
+    transform: skewY(-5deg);
+  }
+
+  // Red section dot (top)
+  .dot-red {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    height: 20%;
     background: white;
     border-radius: 50%;
-    box-shadow: 
-      20px 0 0 white,
-      10px 20px 0 white;
   }
-  
+
+  // Blue section dots (bottom)
+  .dot-blue-1 {
+    position: absolute;
+    bottom: 30%;
+    left: 30%;
+    width: 18%;
+    height: 18%;
+    background: white;
+    border-radius: 50%;
+  }
+
+  .dot-blue-2 {
+    position: absolute;
+    bottom: 30%;
+    right: 30%;
+    width: 18%;
+    height: 18%;
+    background: white;
+    border-radius: 50%;
+  }
+
+  // Alternative implementation using pseudo-elements for dots
+  &.simple {
+    // Single dot in red section using a pseudo-element
+    &::before {
+      content: '';
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20%;
+      height: 20%;
+      background: white;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    // Blue section with two dots
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: var(--dominos-blue);
+      clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 100%);
+      
+      // Two dots in blue section using box-shadow
+      box-shadow: 
+        inset 30% 30% 0 -10% white,
+        inset 70% 30% 0 -10% white;
+    }
+  }
+
   // Size variants
   &.icon {
     border-radius: 20%;
-    
-    &::before {
-      border-radius: 15%;
-    }
+    transform: rotate(20deg);
   }
-  
+
   &.large, &.xl {
-    border-radius: 10%;
-    
-    &::before {
-      border-radius: 5%;
-    }
+    border-radius: 12%;
+    transform: rotate(30deg);
   }
-  
+
   // Color variants
   &.white {
     background: white;
-    border: 2px solid var(--dominos-blue);
+    border: 3px solid var(--dominos-red);
     
     &::before {
-      background: var(--dominos-blue);
+      background: white;
+      border-top: 3px solid var(--dominos-blue);
     }
-    
-    &::after {
+
+    .dot-red {
       background: var(--dominos-red);
-      box-shadow: 
-        20px 0 0 var(--dominos-red),
-        10px 20px 0 var(--dominos-red);
     }
-  }
-  
-  &.red {
-    background: var(--dominos-red);
-    
-    &::before {
+
+    .dot-blue-1,
+    .dot-blue-2 {
       background: var(--dominos-blue);
     }
   }

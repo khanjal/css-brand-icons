@@ -95,4 +95,45 @@
       background-color: var(--logo-black);
     }
   }
+  
+  // Rainbow version
+  &.rainbow {
+    &::before {
+      background: linear-gradient(
+        to bottom,
+        var(--apple-rainbow-red),
+        var(--apple-rainbow-orange),
+        var(--apple-rainbow-yellow),
+        var(--apple-rainbow-green),
+        var(--apple-rainbow-blue),
+        var(--apple-rainbow-purple)
+      );
+    }
+
+    .apple-leaf {
+      background-color: var(--apple-rainbow-green);
+    }
+  }
+
+  // Silver version
+  &.silver {
+    &::before {
+      background-color: var(--apple-silver);
+    }
+
+    .apple-leaf {
+      background-color: var(--apple-silver);
+    }
+  }
+
+  // Modern monochrome version
+  &.monochrome {
+    &::before {
+      background-color: var(--logo-black);
+    }
+
+    .apple-leaf {
+      background-color: var(--logo-black);
+    }
+  }
 }

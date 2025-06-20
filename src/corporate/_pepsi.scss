@@ -1,6 +1,9 @@
 @use '../mixins' as mixins;
 
-// Pepsi Logo Styles - Improved Modern Design
+/**
+ * Pepsi Logo - CSS Interpretation
+ * Classic circular logo with red, white, and blue wave design
+ */
 
 .logo.pepsi {
   @include mixins.circle-logo();
@@ -8,181 +11,297 @@
   position: relative;
   overflow: hidden;
   
-  // Main Pepsi circle with accurate wave design
+  // Create the distinctive wave pattern using clip-path
   &::before {
-    @include mixins.pseudo-element();
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: 
-      // Red section (bottom right)
-      conic-gradient(
-        from 0deg at 50% 50%,
-        transparent 0deg,
-        transparent 45deg,
-        var(--pepsi-red) 45deg,
-        var(--pepsi-red) 165deg,
-        transparent 165deg,
-        transparent 360deg
-      ),
-      // White section (middle)
-      conic-gradient(
-        from 0deg at 50% 50%,
-        transparent 0deg,
-        transparent 165deg,
-        var(--pepsi-white) 165deg,
-        var(--pepsi-white) 285deg,
-        transparent 285deg,
-        transparent 360deg
-      ),
-      // Blue section (top left)
-      conic-gradient(
-        from 0deg at 50% 50%,
-        var(--pepsi-blue) 0deg,
-        var(--pepsi-blue) 45deg,
-        transparent 45deg,
-        transparent 285deg,
-        var(--pepsi-blue) 285deg,
-        var(--pepsi-blue) 360deg
-      );
+    height: 50%;
+    background: var(--pepsi-red);
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 70%,
+      85% 85%,
+      70% 90%,
+      50% 85%,
+      30% 75%,
+      15% 60%,
+      0% 40%
+    );
   }
   
-  // Create the distinctive curved "smile" wave
+  // White wave section in the middle
   &::after {
-    @include mixins.pseudo-element();
-    width: 120%;
-    height: 120%;
-    top: -10%;
-    left: -10%;
-    border-radius: 50%;
+    content: '';
+    position: absolute;
+    top: 35%;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: white;
+    clip-path: polygon(
+      0% 0%,
+      15% 15%,
+      30% 25%,
+      50% 30%,
+      70% 25%,
+      85% 15%,
+      100% 0%,
+      100% 100%,
+      85% 85%,
+      70% 90%,
+      50% 95%,
+      30% 90%,
+      15% 85%,
+      0% 100%
+    );
+  }
+  
+  // Simplified version using CSS gradients
+  &.gradient {
+    background: conic-gradient(
+      from 180deg,
+      var(--pepsi-red) 0deg 140deg,
+      white 140deg 200deg,
+      var(--pepsi-blue) 200deg 360deg
+    );
+    
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+  
+  // Clean modern version
+  &.modern {
     background: 
-      // Top wave curve
       radial-gradient(
-        ellipse 60% 40% at 50% 35%,
-        var(--pepsi-blue) 0%,
-        var(--pepsi-blue) 50%,
-        transparent 50%
-      ),
-      // Bottom wave curve  
-      radial-gradient(
-        ellipse 60% 40% at 50% 65%,
+        ellipse 200% 100% at 50% 45%,
         var(--pepsi-red) 0%,
-        var(--pepsi-red) 50%,
-        transparent 50%
-      ),
-      // Middle white section with curves
-      radial-gradient(
-        ellipse 80% 30% at 50% 50%,
-        var(--pepsi-white) 0%,
-        var(--pepsi-white) 60%,
-        transparent 60%
+        var(--pepsi-red) 45%,
+        white 45%,
+        white 55%,
+        var(--pepsi-blue) 55%,
+        var(--pepsi-blue) 100%
       );
     
-    // Create the wave effect with clip-path
-    clip-path: polygon(
-      0% 45%,
-      15% 35%,
-      35% 30%,
-      50% 35%,
-      65% 45%,
-      85% 60%,
-      100% 75%,
-      100% 100%,
-      0% 100%
-    );
-    z-index: 1;
+    &::before,
+    &::after {
+      display: none;
+    }
   }
   
-  // Modern Wave Design Refinement
-  &::after {
-    // Enhanced wave effect with smoother curves
-    clip-path: polygon(
-      0% 42%,
-      18% 32%,
-      38% 28%,
-      58% 32%,
-      78% 42%,
-      100% 58%,
-      100% 100%,
-      0% 100%
-    );
-    z-index: 1;
-  }
-
-  // Refined vintage 1950s version
-  &.vintage-1950 {
+  // Vintage three-stripe version
+  &.vintage {
     background: linear-gradient(
       0deg,
-      var(--pepsi-red) 0%,
-      var(--pepsi-red) 33%,
-      var(--pepsi-white) 33%,
-      var(--pepsi-white) 67%,
-      var(--pepsi-blue) 67%,
-      var(--pepsi-blue) 100%
+      var(--pepsi-blue) 0%,
+      var(--pepsi-blue) 33%,
+      white 33%,
+      white 67%,
+      var(--pepsi-red) 67%,
+      var(--pepsi-red) 100%
     );
+    
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+  
+  // Size variants
+  &.icon {
+    &::before {
+      clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 65%,
+        80% 80%,
+        60% 85%,
+        40% 80%,
+        20% 70%,
+        0% 50%
+      );
+    }
+    
+    &::after {
+      top: 30%;
+      height: 40%;
+    }
+  }
+  
+  &.large, &.xl {
+    &::before {
+      clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 75%,
+        90% 88%,
+        75% 92%,
+        50% 88%,
+        25% 78%,
+        10% 62%,
+        0% 35%
+      );
+    }
+  }
+  
+  // Color variants
+  &.white {
+    background: white;
+    border: 3px solid var(--pepsi-blue);
+    
+    &::before {
+      background: var(--pepsi-red);
+    }
+    
+    &::after {
+      background: var(--pepsi-blue);
+    }
+  }
+  
+  &.dark {
+    background: var(--pepsi-blue);
+    filter: brightness(0.8);
+  }
+
+  // Historical Pepsi logo variants based on the brand's evolution
+
+  // 1950s Bottle Cap Logo - Red, white, and blue bottle cap design
+  &.bottlecap-1950 {
+    background: white;
+    border: 8px solid #333;
+    position: relative;
+    
+    // Bottle cap ridges
+    &::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      right: -8px;
+      bottom: -8px;
+      background: 
+        repeating-conic-gradient(
+          from 0deg,
+          #333 0deg 9deg,
+          transparent 9deg 18deg
+        );
+      border-radius: 50%;
+      z-index: -1;
+    }
+    
+    // Three stripe design
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        0deg,
+        var(--pepsi-blue) 0% 33%,
+        white 33% 67%,
+        var(--pepsi-red) 67% 100%
+      );
+      border-radius: 50%;
+    }
+  }
+
+  // 1962 Flat Bottle Cap - Clean design without ridges
+  &.bottlecap-1962 {
+    background: linear-gradient(
+      0deg,
+      var(--pepsi-blue) 0% 33%,
+      white 33% 67%,
+      var(--pepsi-red) 67% 100%
+    );
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px #333;
+  }
+
+  // 1973 Globe Logo - Simple three-section globe
+  &.globe-1973 {
+    background: 
+      linear-gradient(
+        0deg,
+        var(--pepsi-blue) 0% 40%,
+        white 40% 60%,
+        var(--pepsi-red) 60% 100%
+      );
+    border: 3px solid white;
+  }
+
+  // 1987 Logo with custom font feel
+  &.retro-1987 {
+    background: 
+      linear-gradient(
+        0deg,
+        var(--pepsi-blue) 0% 40%,
+        white 40% 60%,
+        var(--pepsi-red) 60% 100%
+      );
+    border: 4px solid white;
+    box-shadow: 0 0 0 1px #ccc;
+  }
+
+  // 1940s Red Ribbon Logo - Simple horizontal stripes
+  &.ribbon-1940 {
+    background: white;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: var(--pepsi-red);
+      z-index: 1;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 40%;
+      left: 0;
+      right: 0;
+      height: 20%;
+      background: white;
+      z-index: 2;
+    }
+  }
+
+  // Three-stripe simplified version (easiest to implement)
+  &.stripes {
+    background: linear-gradient(
+      0deg,
+      var(--pepsi-blue) 0% 33.33%,
+      white 33.33% 66.66%,
+      var(--pepsi-red) 66.66% 100%
+    );
+    
     &::before,
     &::after {
       display: none;
     }
   }
 
-  // Refined vintage 1970s version
-  &.vintage-1970 {
-    background: var(--pepsi-blue);
-    border: 4px solid var(--pepsi-white);
-    &::before {
-      background: 
-        radial-gradient(circle at 50% 30%, var(--pepsi-red) 25%, transparent 25%),
-        radial-gradient(circle at 30% 70%, var(--pepsi-white) 20%, transparent 20%),
-        radial-gradient(circle at 70% 70%, var(--pepsi-white) 20%, transparent 20%),
-        var(--pepsi-blue);
-    }
-    &::after {
-      display: none;
-    }
-  }
-  
-  // Modern 2008+ version with refined wave
-  &.modern-2008 {
-    background: var(--pepsi-blue);
+  // 1962-style with bold text area
+  &.bold-1962 {
+    background: linear-gradient(
+      0deg,
+      var(--pepsi-blue) 0% 35%,
+      white 35% 65%,
+      var(--pepsi-red) 65% 100%
+    );
+    border: 2px solid #333;
     
-    &::before {
-      background: 
-        // More refined wave sections
-        conic-gradient(
-          from -45deg at 50% 50%,
-          var(--pepsi-blue) 0deg 110deg,
-          var(--pepsi-white) 110deg 170deg,
-          var(--pepsi-red) 170deg 250deg,
-          var(--pepsi-blue) 250deg 360deg
-        );
-    }
-    
-    &::after {
-      // Enhanced wave with better curves
-      clip-path: polygon(
-        0% 40%,
-        20% 30%,
-        40% 25%,
-        60% 30%,
-        80% 40%,
-        100% 55%,
-        100% 100%,
-        0% 100%
-      );
-    }
-  }
-  
-  // Clean version without wave complexity
-  &.simple {
-    background: 
-      conic-gradient(
-        from 0deg,
-        var(--pepsi-blue) 0deg 120deg,
-        var(--pepsi-white) 120deg 180deg,
-        var(--pepsi-red) 180deg 240deg,
-        var(--pepsi-blue) 240deg 360deg
-      );
     &::before,
     &::after {
       display: none;
