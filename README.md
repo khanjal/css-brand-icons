@@ -175,9 +175,56 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 - Follow semantic versioning
 - Respect trademark and copyright laws
 
-## 📄 Legal Notice
+## 📄 Legal Notice & Disclaimer
 
-This library creates CSS representations of logos for educational and development purposes. All trademarks and logos belong to their respective owners. Please ensure you have proper licensing and permissions before using these logos in commercial projects.
+**IMPORTANT: Please read this section carefully before using this library.**
+
+### Trademark Disclaimer
+This library creates CSS representations of logos for **educational, development, and demonstration purposes only**. All trademarks, service marks, trade names, trade dress, product names, and logos appearing in this library are the property of their respective owners, including but not limited to:
+
+- McDonald's® and the Golden Arches® are registered trademarks of McDonald's Corporation
+- Coca-Cola® is a registered trademark of The Coca-Cola Company
+- Nike® and the Swoosh design are registered trademarks of Nike, Inc.
+- Apple® and the Apple logo are registered trademarks of Apple Inc.
+- BMW® and the BMW roundel are registered trademarks of Bayerische Motoren Werke AG
+- Red Cross® is a registered trademark of the International Committee of the Red Cross
+
+### Fair Use and Educational Purpose
+This project operates under the principles of fair use for:
+- **Educational purposes**: Teaching CSS techniques and web development
+- **Commentary and criticism**: Demonstrating logo design evolution
+- **Transformative use**: Converting trademarked designs into educational CSS code
+- **Non-commercial research**: Studying corporate visual identity
+
+### Usage Restrictions
+- ❌ **DO NOT** use these CSS logos in commercial products without proper licensing
+- ❌ **DO NOT** claim ownership of the original trademark designs
+- ❌ **DO NOT** use in ways that could cause consumer confusion
+- ❌ **DO NOT** use to compete with or impersonate the trademark owners
+- ✅ **DO** use for learning CSS and web development
+- ✅ **DO** use in educational projects and tutorials
+- ✅ **DO** use for personal development and practice
+
+### Developer Responsibility
+**YOU are responsible for:**
+- Obtaining proper licensing for commercial use
+- Ensuring compliance with trademark laws in your jurisdiction
+- Adding appropriate disclaimers to your projects
+- Respecting the intellectual property rights of trademark owners
+
+### No Endorsement
+This library is **NOT endorsed, sponsored, or affiliated** with any of the companies whose logos are represented. The inclusion of a logo does not imply any relationship with or endorsement by the trademark owner.
+
+### Limitation of Liability
+The maintainers of this project are not liable for any misuse of the provided CSS representations. Users assume all responsibility for their use of this library.
+
+### DMCA and Takedown Policy
+If you are a trademark owner and believe your rights are being infringed, please contact us at [your-email] with:
+- Proof of trademark ownership
+- Specific content you believe infringes your rights
+- Your contact information
+
+We will promptly review and address valid concerns.
 
 ## 📝 License
 
@@ -186,11 +233,6 @@ This library creates CSS representations of logos for educational and developmen
 ## ⭐ Show Your Support
 
 If this project helped you, please give it a ⭐ on GitHub!
-
-## 🔗 Related Projects
-
-- [Pride Flags CSS](https://github.com/risadams/pride-flags) - Pure CSS pride flags
-- [Country Flags CSS](https://github.com/lipis/flag-icon-css) - Country flags in CSS
 
 ---
 

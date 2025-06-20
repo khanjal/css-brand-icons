@@ -35,12 +35,12 @@
   "devDependencies": {
     "sass": "^1.69.0",
     "live-server": "^1.2.2"
-  },
-  "files": [
+  },  "files": [
     "dist/",
     "src/",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "LEGAL.md"
   ],
   "engines": {
     "node": ">=14.0.0"
