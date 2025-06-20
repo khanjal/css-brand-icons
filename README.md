@@ -42,6 +42,12 @@ Include the CSS file in your HTML:
   <div class="logo uber green"></div>
   <div class="logo lyft"></div>
   <div class="logo instacart"></div>
+  
+  <!-- Fast food logos -->
+  <div class="logo burger-king"></div>
+  <div class="logo kfc"></div>
+  <div class="logo taco-bell pink"></div>
+  <div class="logo pizza-hut"></div>
 </body>
 ```
 
@@ -78,6 +84,13 @@ Many logos include historical variants:
   - `vintage-1971` - Original brown 1971 design
   - `white` - White version for dark backgrounds
   - `black` - Black version
+- **burger-king** - Burger King crown logo
+- **kfc** - KFC bucket and chicken logo
+- **taco-bell** - Taco Bell bell logo
+- **subway** - Subway wordmark logo
+- **pizza-hut** - Pizza Hut roof logo
+- **dominos** - Domino's pizza delivery logo
+- **wendys** - Wendy's girl logo
 
 ### Technology
 - **apple** - Apple logo

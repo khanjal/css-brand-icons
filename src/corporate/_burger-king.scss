@@ -1,0 +1,58 @@
+/**
+ * Burger King Logo - CSS Interpretation
+ * Orange and blue circular design with bun-inspired elements
+ */
+
+.logo.burger-king {
+  background: var(--burger-king-blue);
+  border-radius: 50%;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    background: var(--burger-king-orange);
+    border-radius: 50%;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 40%;
+    height: 40%;
+    background: var(--burger-king-red);
+    border-radius: 50%;
+  }
+  
+  // Color variants
+  &.white {
+    background: white;
+    border: 2px solid var(--burger-king-blue);
+    
+    &::before {
+      background: var(--burger-king-orange);
+    }
+    
+    &::after {
+      background: var(--burger-king-red);
+    }
+  }
+  
+  &.orange {
+    background: var(--burger-king-orange);
+    
+    &::before {
+      background: var(--burger-king-blue);
+    }
+    
+    &::after {
+      background: white;
+    }
+  }
+}

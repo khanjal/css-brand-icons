@@ -1,0 +1,56 @@
+/**
+ * Subway Logo - CSS Interpretation
+ * Green and yellow arrow-inspired design
+ */
+
+.logo.subway {
+  background: var(--subway-green);
+  border-radius: 10%;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    width: 70%;
+    height: 40%;
+    background: var(--subway-yellow);
+    clip-path: polygon(0% 50%, 20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%);
+  }
+  
+  // Size variants
+  &.icon {
+    border-radius: 15%;
+  }
+  
+  &.large, &.xl {
+    border-radius: 5%;
+  }
+  
+  // Color variants
+  &.white {
+    background: white;
+    border: 2px solid var(--subway-green);
+    
+    &::before {
+      background: var(--subway-green);
+    }
+  }
+  
+  &.yellow {
+    background: var(--subway-yellow);
+    
+    &::before {
+      background: var(--subway-green);
+    }
+  }
+  
+  &.black {
+    background: var(--logo-black);
+    
+    &::before {
+      background: var(--subway-yellow);
+    }
+  }
+}

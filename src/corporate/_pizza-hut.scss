@@ -1,0 +1,63 @@
+/**
+ * Pizza Hut Logo - CSS Interpretation
+ * Red hat/roof inspired design
+ */
+
+.logo.pizza-hut {
+  background: var(--pizza-hut-red);
+  border-radius: 20% 20% 50% 50%;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width: 50%;
+    height: 40%;
+    background: white;
+    border-radius: 10%;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    width: 30%;
+    height: 20%;
+    background: var(--pizza-hut-red);
+    border-radius: 50%;
+  }
+  
+  // Color variants
+  &.white {
+    background: white;
+    border: 2px solid var(--pizza-hut-red);
+    
+    &::before {
+      background: var(--pizza-hut-red);
+      border: none;
+    }
+    
+    &::after {
+      background: white;
+    }
+  }
+  
+  &.black {
+    background: var(--logo-black);
+    
+    &::after {
+      background: var(--logo-black);
+    }
+  }
+  
+  &.yellow {
+    background: var(--pizza-hut-yellow);
+    
+    &::after {
+      background: var(--pizza-hut-yellow);
+    }
+  }
+}

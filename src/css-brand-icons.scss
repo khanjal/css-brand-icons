@@ -42,6 +42,15 @@
 @import 'delivery/postmates';
 @import 'delivery/instacart';
 
+// Fast Food Chains
+@import 'corporate/burger-king';
+@import 'corporate/kfc';
+@import 'corporate/taco-bell';
+@import 'corporate/subway';
+@import 'corporate/pizza-hut';
+@import 'corporate/dominos';
+@import 'corporate/wendys';
+
 // Utility classes
 .logo-container {
   display: flex;

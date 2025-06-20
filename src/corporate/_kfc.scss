@@ -1,0 +1,54 @@
+/**
+ * KFC Logo - CSS Interpretation
+ * Red bucket-inspired circular design
+ */
+
+.logo.kfc {
+  background: var(--kfc-red);
+  border-radius: 50%;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background: white;
+    border-radius: 50%;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    width: 30%;
+    height: 15%;
+    background: var(--kfc-red);
+    border-radius: 50% 50% 0 0;
+  }
+  
+  // Color variants
+  &.white {
+    background: white;
+    border: 2px solid var(--kfc-red);
+    
+    &::before {
+      background: var(--kfc-red);
+    }
+    
+    &::after {
+      background: white;
+    }
+  }
+  
+  &.black {
+    background: var(--logo-black);
+    
+    &::after {
+      background: var(--logo-black);
+    }
+  }
+}

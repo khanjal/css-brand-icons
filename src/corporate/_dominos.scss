@@ -1,0 +1,77 @@
+/**
+ * Domino's Pizza Logo - CSS Interpretation
+ * Blue and red domino-inspired design
+ */
+
+.logo.dominos {
+  background: var(--dominos-blue);
+  border-radius: 15%;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    background: var(--dominos-red);
+    border-radius: 10%;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    width: 10%;
+    height: 10%;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 
+      20px 0 0 white,
+      10px 20px 0 white;
+  }
+  
+  // Size variants
+  &.icon {
+    border-radius: 20%;
+    
+    &::before {
+      border-radius: 15%;
+    }
+  }
+  
+  &.large, &.xl {
+    border-radius: 10%;
+    
+    &::before {
+      border-radius: 5%;
+    }
+  }
+  
+  // Color variants
+  &.white {
+    background: white;
+    border: 2px solid var(--dominos-blue);
+    
+    &::before {
+      background: var(--dominos-blue);
+    }
+    
+    &::after {
+      background: var(--dominos-red);
+      box-shadow: 
+        20px 0 0 var(--dominos-red),
+        10px 20px 0 var(--dominos-red);
+    }
+  }
+  
+  &.red {
+    background: var(--dominos-red);
+    
+    &::before {
+      background: var(--dominos-blue);
+    }
+  }
+}

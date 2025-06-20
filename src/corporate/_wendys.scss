@@ -1,0 +1,58 @@
+/**
+ * Wendy's Logo - CSS Interpretation
+ * Red circular design with pigtail-inspired elements
+ */
+
+.logo.wendys {
+  background: var(--wendys-red);
+  border-radius: 50%;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background: white;
+    border-radius: 50%;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 15%;
+    height: 30%;
+    background: var(--wendys-yellow);
+    border-radius: 50% 0 50% 50%;
+    transform: rotate(-20deg);
+    box-shadow: 45px 5px 0 var(--wendys-yellow);
+  }
+  
+  // Color variants
+  &.white {
+    background: white;
+    border: 2px solid var(--wendys-red);
+    
+    &::before {
+      background: var(--wendys-red);
+    }
+    
+    &::after {
+      background: var(--wendys-yellow);
+      box-shadow: 45px 5px 0 var(--wendys-yellow);
+    }
+  }
+  
+  &.blue {
+    background: var(--wendys-blue);
+    
+    &::after {
+      background: var(--wendys-yellow);
+      box-shadow: 45px 5px 0 var(--wendys-yellow);
+    }
+  }
+}

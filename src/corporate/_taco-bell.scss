@@ -1,0 +1,68 @@
+/**
+ * Taco Bell Logo - CSS Interpretation
+ * Purple bell-inspired design
+ */
+
+.logo.taco-bell {
+  background: var(--taco-bell-purple);
+  border-radius: 15%;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background: var(--taco-bell-pink);
+    border-radius: 50% 50% 0 50%;
+    transform: rotate(45deg);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 20%;
+    height: 20%;
+    background: white;
+    border-radius: 50%;
+  }
+  
+  // Size variants
+  &.icon {
+    border-radius: 20%;
+  }
+  
+  &.large, &.xl {
+    border-radius: 10%;
+  }
+  
+  // Color variants
+  &.white {
+    background: white;
+    border: 2px solid var(--taco-bell-purple);
+    
+    &::before {
+      background: var(--taco-bell-purple);
+    }
+    
+    &::after {
+      background: var(--taco-bell-pink);
+    }
+  }
+  
+  &.pink {
+    background: var(--taco-bell-pink);
+    
+    &::before {
+      background: var(--taco-bell-purple);
+    }
+    
+    &::after {
+      background: white;
+    }
+  }
+}
