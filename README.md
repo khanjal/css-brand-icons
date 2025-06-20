@@ -3,7 +3,9 @@
 [![npm](https://img.shields.io/npm/v/@khanj/world-logos)](https://www.npmjs.com/package/@khanj/world-logos)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A pure CSS library for displaying corporate, non-profit, and organizational logos in various scales and historical versions. Create beautiful, scalable logos using only CSS - no images required!
+A pure CSS library featuring **off-brand, CSS-inspired interpretations** of well-known corporate, non-profit, and organizational logos. Create recognizable logo-style elements using only CSS - no images or trademarked assets required!
+
+⚠️ **Important**: These are CSS interpretations and approximations, not exact replicas. Perfect for prototypes, demos, and educational projects where you need recognizable logo-inspired designs without using actual trademarked content.
 
 ## 🚀 Install
 

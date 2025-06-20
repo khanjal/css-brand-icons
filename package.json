@@ -1,7 +1,7 @@
 {
   "name": "@khanj/world-logos",
   "version": "1.0.0",
-  "description": "A pure CSS library for displaying corporate, non-profit, and organizational logos in various scales and historical versions",
+  "description": "Pure CSS library with off-brand, CSS-inspired interpretations of well-known logos - no images or trademarked assets required",
   "main": "dist/world-logos.min.css",
   "scripts": {
     "build": "npm run build:sass && npm run build:minify",
