@@ -1,0 +1,146 @@
+// Twitter/X Logo Styles
+
+.logo.twitter {
+  @include logo-base();
+  background-color: var(--twitter-blue);
+  position: relative;
+  border-radius: 12px;
+  
+  // Twitter bird silhouette
+  &::before {
+    @include pseudo-element();
+    width: 70%;
+    height: 60%;
+    background-color: var(--twitter-white);
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    
+    // Bird shape using clip-path
+    clip-path: polygon(
+      0% 80%,
+      10% 60%,
+      20% 40%,
+      40% 20%,
+      60% 10%,
+      80% 15%,
+      85% 25%,
+      80% 35%,
+      70% 40%,
+      85% 50%,
+      95% 60%,
+      90% 70%,
+      75% 65%,
+      60% 70%,
+      40% 80%,
+      20% 85%,
+      5% 85%
+    );
+  }
+  
+  // Circle version
+  &.circle {
+    @include circle-logo();
+  }
+  
+  // White version for dark backgrounds
+  &.white {
+    background-color: var(--twitter-white);
+    border: 2px solid var(--logo-light-gray);
+    
+    &::before {
+      background-color: var(--twitter-blue);
+    }
+  }
+  
+  // Vintage 2006 version (original Twitter)
+  &.vintage-2006 {
+    background-color: #40E0D0;
+    
+    &::before {
+      clip-path: polygon(
+        5% 75%,
+        15% 55%,
+        25% 35%,
+        45% 15%,
+        65% 5%,
+        85% 10%,
+        90% 20%,
+        85% 30%,
+        75% 35%,
+        90% 45%,
+        100% 55%,
+        95% 65%,
+        80% 60%,
+        65% 65%,
+        45% 75%,
+        25% 80%,
+        10% 80%
+      );
+    }
+  }
+}
+
+// X (new Twitter branding)
+.logo.x-twitter {
+  @include logo-base();
+  background-color: var(--twitter-black);
+  position: relative;
+  
+  // X letter
+  &::before {
+    @include pseudo-element('𝕏');
+    @include text-logo('Arial', bold, var(--twitter-white));
+    font-size: calc(#{$logo-size-default} * 0.6);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  // Alternative X using lines
+  &.geometric {
+    &::before {
+      content: '';
+      width: 60%;
+      height: 60%;
+      background: 
+        linear-gradient(45deg, transparent 40%, var(--twitter-white) 40%, var(--twitter-white) 60%, transparent 60%),
+        linear-gradient(-45deg, transparent 40%, var(--twitter-white) 40%, var(--twitter-white) 60%, transparent 60%);
+    }
+  }
+  
+  // White version
+  &.white {
+    background-color: var(--twitter-white);
+    border: 2px solid var(--logo-light-gray);
+    
+    &::before {
+      color: var(--twitter-black);
+    }
+    
+    &.geometric::before {
+      background: 
+        linear-gradient(45deg, transparent 40%, var(--twitter-black) 40%, var(--twitter-black) 60%, transparent 60%),
+        linear-gradient(-45deg, transparent 40%, var(--twitter-black) 40%, var(--twitter-black) 60%, transparent 60%);
+    }
+  }
+  
+  // Size adjustments
+  &.icon {
+    &::before {
+      font-size: calc(#{$logo-size-icon} * 0.6);
+    }
+  }
+  
+  &.large {
+    &::before {
+      font-size: calc(#{$logo-size-large} * 0.6);
+    }
+  }
+  
+  &.xl {
+    &::before {
+      font-size: calc(#{$logo-size-xl} * 0.6);
+    }
+  }
+}

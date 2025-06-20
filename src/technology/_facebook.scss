@@ -1,0 +1,108 @@
+// Facebook/Meta Logo Styles
+
+.logo.facebook {
+  @include rounded-square-logo($logo-size-default, 12px);
+  background-color: var(--facebook-blue);
+  position: relative;
+  
+  // Facebook 'f' letter
+  &::before {
+    @include pseudo-element('f');
+    @include text-logo('Arial', bold, var(--facebook-white));
+    font-size: calc(#{$logo-size-default} * 0.7);
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+  }
+  
+  // Circle version
+  &.circle {
+    @include circle-logo();
+  }
+  
+  // Square version with more rounded corners
+  &.rounded {
+    border-radius: 20px;
+  }
+  
+  // White version for dark backgrounds
+  &.white {
+    background-color: var(--facebook-white);
+    border: 2px solid var(--logo-light-gray);
+    
+    &::before {
+      color: var(--facebook-blue);
+    }
+  }
+  
+  // Vintage 2004 version (The Facebook)
+  &.vintage-2004 {
+    background-color: #3b5998;
+    border-radius: 4px;
+    
+    &::before {
+      content: 'f';
+      font-family: 'Times New Roman', serif;
+      font-size: calc(#{$logo-size-default} * 0.6);
+    }
+  }
+  
+  // Size adjustments
+  &.icon {
+    &::before {
+      font-size: calc(#{$logo-size-icon} * 0.7);
+    }
+  }
+  
+  &.large {
+    &::before {
+      font-size: calc(#{$logo-size-large} * 0.7);
+    }
+  }
+  
+  &.xl {
+    &::before {
+      font-size: calc(#{$logo-size-xl} * 0.7);
+    }
+  }
+}
+
+// Meta logo (new branding)
+.logo.meta {
+  @include logo-base();
+  background: linear-gradient(
+    45deg,
+    #0467df 0%,
+    #0467df 25%,
+    #4c4ff7 50%,
+    #9932cc 75%,
+    #ff6b6b 100%
+  );
+  position: relative;
+  border-radius: 50%;
+  
+  // Meta infinity symbol
+  &::before {
+    @include pseudo-element();
+    width: 80%;
+    height: 40%;
+    background-color: var(--logo-white);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    
+    // Create infinity shape
+    clip-path: polygon(
+      20% 0%,
+      0% 50%,
+      20% 100%,
+      40% 60%,
+      60% 100%,
+      80% 50%,
+      60% 0%,
+      40% 40%
+    );
+  }
+}

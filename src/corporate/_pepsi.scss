@@ -1,0 +1,88 @@
+// Pepsi Logo Styles
+
+.logo.pepsi {
+  @include circle-logo();
+  background: linear-gradient(
+    45deg,
+    var(--pepsi-blue) 0%,
+    var(--pepsi-blue) 35%,
+    var(--pepsi-white) 35%,
+    var(--pepsi-white) 50%,
+    var(--pepsi-red) 50%,
+    var(--pepsi-red) 100%
+  );
+  position: relative;
+  border: 2px solid var(--pepsi-blue);
+  
+  // Create the curved wave effect
+  &::before {
+    @include pseudo-element();
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 45deg,
+      var(--pepsi-red) 0deg 120deg,
+      var(--pepsi-white) 120deg 180deg,
+      var(--pepsi-blue) 180deg 360deg
+    );
+    clip-path: circle(45% at 50% 50%);
+  }
+  
+  // Vintage 1940s version (simple circle design)
+  &.vintage-1940 {
+    background: var(--pepsi-blue);
+    border: 3px solid var(--pepsi-red);
+    
+    &::before {
+      background: var(--pepsi-white);
+      clip-path: circle(35% at 50% 50%);
+    }
+    
+    &::after {
+      @include pseudo-element();
+      width: 60%;
+      height: 60%;
+      background: var(--pepsi-red);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  // 1970s version (more geometric)
+  &.vintage-1970 {
+    background: linear-gradient(
+      0deg,
+      var(--pepsi-red) 0%,
+      var(--pepsi-red) 33%,
+      var(--pepsi-white) 33%,
+      var(--pepsi-white) 66%,
+      var(--pepsi-blue) 66%,
+      var(--pepsi-blue) 100%
+    );
+    
+    &::before {
+      display: none;
+    }
+  }
+  
+  // Modern wave design (2008+)
+  &.modern {
+    background: 
+      radial-gradient(ellipse at 30% 20%, var(--pepsi-white) 20%, transparent 20%),
+      conic-gradient(
+        from 30deg,
+        var(--pepsi-blue) 0deg 140deg,
+        var(--pepsi-white) 140deg 200deg,
+        var(--pepsi-red) 200deg 360deg
+      );
+      
+    &::before {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      clip-path: none;
+    }
+  }
+}

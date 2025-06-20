@@ -60,14 +60,34 @@ Many logos include historical variants:
 - **coca-cola** - Coca-Cola script logo
   - `vintage-1886` - Original 1886 design
   - `classic` - Classic ribbon design
+- **pepsi** - Pepsi globe logo
+  - `vintage-1940` - 1940s simple design
+  - `vintage-1970` - 1970s geometric stripes
+  - `modern` - Modern wave design
 - **nike** - Nike swoosh
   - `vintage-1971` - Original 1971 design
+- **starbucks** - Starbucks siren logo
+  - `vintage-1971` - Original brown 1971 design
+  - `white` - White version for dark backgrounds
+  - `black` - Black version
 
 ### Technology
 - **apple** - Apple logo
   - `vintage-1976` - Rainbow Apple logo
   - `silver` - Silver/white version
   - `black` - Black version
+- **facebook** - Facebook logo
+  - `vintage-2004` - Original "The Facebook" design
+  - `circle` - Circular version
+  - `white` - White version for dark backgrounds
+- **meta** - Meta (Facebook rebrand) infinity logo
+- **twitter** - Twitter bird logo
+  - `vintage-2006` - Original 2006 design
+  - `circle` - Circular version
+  - `white` - White version for dark backgrounds
+- **x-twitter** - X (new Twitter) logo
+  - `geometric` - Geometric X design
+  - `white` - White version for dark backgrounds
 
 ### Non-Profit Organizations
 - **red-cross** - International Red Cross
