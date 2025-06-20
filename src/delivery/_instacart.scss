@@ -1,0 +1,75 @@
+/**
+ * Instacart Logo - CSS Interpretation
+ * Green shopping cart inspired design
+ */
+
+.logo.instacart {
+  background: var(--instacart-green);
+  border-radius: 20%;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width: 50%;
+    height: 35%;
+    background: white;
+    border-radius: 8% 8% 20% 20%;
+    border: 2px solid white;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    left: 30%;
+    width: 12%;
+    height: 12%;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 28px 0 0 white;
+  }
+  
+  // Size variants
+  &.icon {
+    border-radius: 25%;
+    
+    &::before {
+      border-radius: 12% 12% 25% 25%;
+    }
+  }
+  
+  &.large, &.xl {
+    border-radius: 15%;
+    
+    &::before {
+      border-radius: 5% 5% 15% 15%;
+    }
+  }
+  
+  // Color variants
+  &.white {
+    background: white;
+    border: 2px solid var(--instacart-green);
+    
+    &::before {
+      background: transparent;
+      border-color: var(--instacart-green);
+    }
+    
+    &::after {
+      background: var(--instacart-green);
+      box-shadow: 28px 0 0 var(--instacart-green);
+    }
+  }
+  
+  &.black {
+    background: var(--logo-black);
+  }
+  
+  &.orange {
+    background: var(--instacart-orange);
+  }
+}

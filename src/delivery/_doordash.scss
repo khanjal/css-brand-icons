@@ -1,0 +1,73 @@
+/**
+ * DoorDash Logo - CSS Interpretation
+ * Red delivery bag inspired design
+ */
+
+.logo.doordash {
+  background: var(--doordash-red);
+  border-radius: 12%;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    background: white;
+    border-radius: 8%;
+    box-shadow: inset 0 0 0 2px var(--doordash-red);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    width: 30%;
+    height: 30%;
+    background: var(--doordash-red);
+    border-radius: 50%;
+  }
+  
+  // Size variants
+  &.icon {
+    border-radius: 16%;
+    
+    &::before {
+      border-radius: 12%;
+    }
+  }
+  
+  &.large, &.xl {
+    border-radius: 8%;
+    
+    &::before {
+      border-radius: 4%;
+    }
+  }
+  
+  // Color variants
+  &.white {
+    background: white;
+    border: 2px solid var(--doordash-red);
+    
+    &::before {
+      background: var(--doordash-red);
+      box-shadow: none;
+    }
+    
+    &::after {
+      background: white;
+    }
+  }
+  
+  &.black {
+    background: var(--logo-black);
+    
+    &::after {
+      background: var(--logo-black);
+    }
+  }
+}

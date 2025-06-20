@@ -1,0 +1,79 @@
+/**
+ * Lyft Logo - CSS Interpretation
+ * Pink rounded square with white letter-inspired shape
+ */
+
+.logo.lyft {
+  background: var(--lyft-pink);
+  border-radius: 20%;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    width: 40%;
+    height: 50%;
+    background: white;
+    border-radius: 15% 15% 15% 50%;
+    transform: rotate(-10deg);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: 25%;
+    width: 15%;
+    height: 15%;
+    background: white;
+    border-radius: 50%;
+  }
+  
+  // Size variants
+  &.icon {
+    border-radius: 25%;
+    
+    &::before {
+      border-radius: 20% 20% 20% 60%;
+    }
+  }
+  
+  &.large, &.xl {
+    border-radius: 15%;
+    
+    &::before {
+      border-radius: 10% 10% 10% 40%;
+    }
+  }
+  
+  // Color variants
+  &.white {
+    background: white;
+    border: 2px solid var(--lyft-pink);
+    
+    &::before,
+    &::after {
+      background: var(--lyft-pink);
+    }
+  }
+  
+  &.black {
+    background: var(--logo-black);
+    
+    &::before,
+    &::after {
+      background: white;
+    }
+  }
+  
+  &.dark {
+    background: var(--lyft-dark);
+    
+    &::before,
+    &::after {
+      background: white;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+/**
+ * Grubhub Logo - CSS Interpretation
+ * Orange/red circular design with fork-inspired elements
+ */
+
+.logo.grubhub {
+  background: var(--grubhub-orange);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    width: 6%;
+    height: 40%;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 
+      8px 0 0 white,
+      16px 0 0 white;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    width: 22%;
+    height: 8%;
+    background: white;
+    border-radius: 4px;
+  }
+  
+  // Color variants
+  &.white {
+    background: white;
+    border: 2px solid var(--grubhub-orange);
+    
+    &::before,
+    &::after {
+      background: var(--grubhub-orange);
+      box-shadow: 
+        8px 0 0 var(--grubhub-orange),
+        16px 0 0 var(--grubhub-orange);
+    }
+    
+    &::after {
+      box-shadow: none;
+    }
+  }
+  
+  &.red {
+    background: var(--grubhub-red);
+  }
+  
+  &.black {
+    background: var(--logo-black);
+  }
+}

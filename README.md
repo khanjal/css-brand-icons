@@ -36,6 +36,12 @@ Include the CSS file in your HTML:
   
   <!-- Historical version -->
   <div class="logo mcdonalds vintage-1960"></div>
+  
+  <!-- Delivery service logos -->
+  <div class="logo doordash"></div>
+  <div class="logo uber green"></div>
+  <div class="logo lyft"></div>
+  <div class="logo instacart"></div>
 </body>
 ```
 
@@ -101,6 +107,18 @@ Many logos include historical variants:
 - **bmw** - BMW roundel
   - `vintage-1917` - Original 1917 design
   - `monochrome` - Black and white version
+
+### 🚚 Delivery & Transportation Services
+
+| Service | Class | Description |
+|---------|-------|-------------|
+| DoorDash | `doordash` | Food delivery service |
+| Uber | `uber` | Ride-sharing service |
+| Uber Eats | `ubereats` | Food delivery service |
+| Lyft | `lyft` | Ride-sharing service |
+| Grubhub | `grubhub` | Food delivery service |
+| Postmates | `postmates` | Delivery service |
+| Instacart | `instacart` | Grocery delivery service |
 
 > **Coming Soon**: More logos are being added regularly! Check back for updates or contribute new ones.
 

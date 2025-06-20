@@ -34,6 +34,14 @@
 // Import automotive logos
 @import 'automotive/bmw';
 
+// Import delivery & transportation service logos
+@import 'delivery/doordash';
+@import 'delivery/uber';
+@import 'delivery/lyft';
+@import 'delivery/grubhub';
+@import 'delivery/postmates';
+@import 'delivery/instacart';
+
 // Utility classes
 .logo-container {
   display: flex;

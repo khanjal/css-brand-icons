@@ -1,0 +1,44 @@
+/**
+ * Postmates Logo - CSS Interpretation
+ * Simple geometric design with distinctive shape
+ */
+
+.logo.postmates {
+  background: var(--postmates-black);
+  border-radius: 15%;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background: white;
+    clip-path: polygon(0% 0%, 100% 25%, 100% 75%, 0% 100%);
+  }
+  
+  // Size variants
+  &.icon {
+    border-radius: 20%;
+  }
+  
+  &.large, &.xl {
+    border-radius: 10%;
+  }
+  
+  // Color variants
+  &.white {
+    background: white;
+    border: 2px solid var(--postmates-black);
+    
+    &::before {
+      background: var(--postmates-black);
+    }
+  }
+  
+  &.red {
+    background: var(--postmates-red);
+  }
+}
