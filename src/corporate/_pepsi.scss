@@ -1,88 +1,191 @@
-// Pepsi Logo Styles
+@use '../mixins' as mixins;
+
+// Pepsi Logo Styles - Improved Modern Design
 
 .logo.pepsi {
-  @include circle-logo();
-  background: linear-gradient(
-    45deg,
-    var(--pepsi-blue) 0%,
-    var(--pepsi-blue) 35%,
-    var(--pepsi-white) 35%,
-    var(--pepsi-white) 50%,
-    var(--pepsi-red) 50%,
-    var(--pepsi-red) 100%
-  );
+  @include mixins.circle-logo();
+  background: var(--pepsi-blue);
   position: relative;
-  border: 2px solid var(--pepsi-blue);
+  overflow: hidden;
   
-  // Create the curved wave effect
+  // Main Pepsi circle with accurate wave design
   &::before {
-    @include pseudo-element();
+    @include mixins.pseudo-element();
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: conic-gradient(
-      from 45deg,
-      var(--pepsi-red) 0deg 120deg,
-      var(--pepsi-white) 120deg 180deg,
-      var(--pepsi-blue) 180deg 360deg
+    background: 
+      // Red section (bottom right)
+      conic-gradient(
+        from 0deg at 50% 50%,
+        transparent 0deg,
+        transparent 45deg,
+        var(--pepsi-red) 45deg,
+        var(--pepsi-red) 165deg,
+        transparent 165deg,
+        transparent 360deg
+      ),
+      // White section (middle)
+      conic-gradient(
+        from 0deg at 50% 50%,
+        transparent 0deg,
+        transparent 165deg,
+        var(--pepsi-white) 165deg,
+        var(--pepsi-white) 285deg,
+        transparent 285deg,
+        transparent 360deg
+      ),
+      // Blue section (top left)
+      conic-gradient(
+        from 0deg at 50% 50%,
+        var(--pepsi-blue) 0deg,
+        var(--pepsi-blue) 45deg,
+        transparent 45deg,
+        transparent 285deg,
+        var(--pepsi-blue) 285deg,
+        var(--pepsi-blue) 360deg
+      );
+  }
+  
+  // Create the distinctive curved "smile" wave
+  &::after {
+    @include mixins.pseudo-element();
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    border-radius: 50%;
+    background: 
+      // Top wave curve
+      radial-gradient(
+        ellipse 60% 40% at 50% 35%,
+        var(--pepsi-blue) 0%,
+        var(--pepsi-blue) 50%,
+        transparent 50%
+      ),
+      // Bottom wave curve  
+      radial-gradient(
+        ellipse 60% 40% at 50% 65%,
+        var(--pepsi-red) 0%,
+        var(--pepsi-red) 50%,
+        transparent 50%
+      ),
+      // Middle white section with curves
+      radial-gradient(
+        ellipse 80% 30% at 50% 50%,
+        var(--pepsi-white) 0%,
+        var(--pepsi-white) 60%,
+        transparent 60%
+      );
+    
+    // Create the wave effect with clip-path
+    clip-path: polygon(
+      0% 45%,
+      15% 35%,
+      35% 30%,
+      50% 35%,
+      65% 45%,
+      85% 60%,
+      100% 75%,
+      100% 100%,
+      0% 100%
     );
-    clip-path: circle(45% at 50% 50%);
+    z-index: 1;
   }
   
-  // Vintage 1940s version (simple circle design)
-  &.vintage-1940 {
-    background: var(--pepsi-blue);
-    border: 3px solid var(--pepsi-red);
-    
-    &::before {
-      background: var(--pepsi-white);
-      clip-path: circle(35% at 50% 50%);
-    }
-    
-    &::after {
-      @include pseudo-element();
-      width: 60%;
-      height: 60%;
-      background: var(--pepsi-red);
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+  // Modern Wave Design Refinement
+  &::after {
+    // Enhanced wave effect with smoother curves
+    clip-path: polygon(
+      0% 42%,
+      18% 32%,
+      38% 28%,
+      58% 32%,
+      78% 42%,
+      100% 58%,
+      100% 100%,
+      0% 100%
+    );
+    z-index: 1;
   }
-  
-  // 1970s version (more geometric)
-  &.vintage-1970 {
+
+  // Refined vintage 1950s version
+  &.vintage-1950 {
     background: linear-gradient(
       0deg,
       var(--pepsi-red) 0%,
       var(--pepsi-red) 33%,
       var(--pepsi-white) 33%,
-      var(--pepsi-white) 66%,
-      var(--pepsi-blue) 66%,
+      var(--pepsi-white) 67%,
+      var(--pepsi-blue) 67%,
       var(--pepsi-blue) 100%
     );
-    
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  // Refined vintage 1970s version
+  &.vintage-1970 {
+    background: var(--pepsi-blue);
+    border: 4px solid var(--pepsi-white);
     &::before {
+      background: 
+        radial-gradient(circle at 50% 30%, var(--pepsi-red) 25%, transparent 25%),
+        radial-gradient(circle at 30% 70%, var(--pepsi-white) 20%, transparent 20%),
+        radial-gradient(circle at 70% 70%, var(--pepsi-white) 20%, transparent 20%),
+        var(--pepsi-blue);
+    }
+    &::after {
       display: none;
     }
   }
   
-  // Modern wave design (2008+)
-  &.modern {
-    background: 
-      radial-gradient(ellipse at 30% 20%, var(--pepsi-white) 20%, transparent 20%),
-      conic-gradient(
-        from 30deg,
-        var(--pepsi-blue) 0deg 140deg,
-        var(--pepsi-white) 140deg 200deg,
-        var(--pepsi-red) 200deg 360deg
-      );
-      
+  // Modern 2008+ version with refined wave
+  &.modern-2008 {
+    background: var(--pepsi-blue);
+    
     &::before {
-      background: none;
-      border: 1px solid rgba(255,255,255,0.3);
-      clip-path: none;
+      background: 
+        // More refined wave sections
+        conic-gradient(
+          from -45deg at 50% 50%,
+          var(--pepsi-blue) 0deg 110deg,
+          var(--pepsi-white) 110deg 170deg,
+          var(--pepsi-red) 170deg 250deg,
+          var(--pepsi-blue) 250deg 360deg
+        );
+    }
+    
+    &::after {
+      // Enhanced wave with better curves
+      clip-path: polygon(
+        0% 40%,
+        20% 30%,
+        40% 25%,
+        60% 30%,
+        80% 40%,
+        100% 55%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  }
+  
+  // Clean version without wave complexity
+  &.simple {
+    background: 
+      conic-gradient(
+        from 0deg,
+        var(--pepsi-blue) 0deg 120deg,
+        var(--pepsi-white) 120deg 180deg,
+        var(--pepsi-red) 180deg 240deg,
+        var(--pepsi-blue) 240deg 360deg
+      );
+    &::before,
+    &::after {
+      display: none;
     }
   }
 }

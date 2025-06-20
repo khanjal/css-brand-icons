@@ -1,12 +1,15 @@
+@use '../mixins' as mixins;
+@use 'sass:color';
+
 // Apple Logo Styles
 
 .logo.apple {
-  @include logo-base();
+  @include mixins.logo-base();
   background-color: transparent;
   
   // Apple shape
   &::before {
-    @include pseudo-element();
+    @include mixins.pseudo-element();
     width: 75%;
     height: 85%;
     background-color: var(--apple-gray);
@@ -18,12 +21,12 @@
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     
     // Bite mark
-    box-shadow: inset 15% 20% 0 -10% transparent;
+    box-shadow: inset 15% 20% 0 -10% transparent, inset 20% 25% 0 -15% transparent;
   }
   
   // Bite mark as separate element
   &::after {
-    @include pseudo-element();
+    @include mixins.pseudo-element();
     width: 25%;
     height: 25%;
     background-color: var(--logo-white);
@@ -47,25 +50,33 @@
   // Silver/white version
   &.silver {
     &::before {
-      background-color: var(--apple-silver);
+      background: linear-gradient(
+        to bottom,
+        color.adjust(#c0c0c0, $lightness: 20%),
+        #c0c0c0
+      );
     }
     
     .apple-leaf {
-      background-color: var(--apple-silver);
+      background: linear-gradient(
+        to bottom,
+        color.adjust(#c0c0c0, $lightness: 20%),
+        #c0c0c0
+      );
     }
   }
   
   // Vintage 1976 rainbow version
   &.vintage-1976 {
     &::before {
-      @include color-stripes(
+      @include mixins.color-stripes(
         to bottom,
-        var(--apple-rainbow-green),
-        var(--apple-rainbow-yellow),
-        var(--apple-rainbow-orange),
         var(--apple-rainbow-red),
-        var(--apple-rainbow-purple),
-        var(--apple-rainbow-blue)
+        var(--apple-rainbow-orange),
+        var(--apple-rainbow-yellow),
+        var(--apple-rainbow-green),
+        var(--apple-rainbow-blue),
+        var(--apple-rainbow-purple)
       );
     }
     

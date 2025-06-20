@@ -1,7 +1,12 @@
+// Import the variables module
+@use 'variables' as vars;
+@use 'sass:list';
+@use 'sass:math';
+
 // Mixins for common logo patterns
 
 // Basic logo shape mixin
-@mixin logo-base($width: $logo-size-default, $height: $logo-size-default) {
+@mixin logo-base($width: vars.$logo-size-default, $height: vars.$logo-size-default) {
   width: $width;
   height: $height;
   display: inline-block;
@@ -12,21 +17,21 @@
 }
 
 // Circle mixin for circular logos
-@mixin circle-logo($size: $logo-size-default) {
+@mixin circle-logo($size: vars.$logo-size-default) {
   @include logo-base($size, $size);
   border-radius: 50%;
   overflow: hidden;
 }
 
 // Square logo with rounded corners
-@mixin rounded-square-logo($size: $logo-size-default, $radius: 8px) {
+@mixin rounded-square-logo($size: vars.$logo-size-default, $radius: 8px) {
   @include logo-base($size, $size);
   border-radius: $radius;
   overflow: hidden;
 }
 
 // Rectangular logo
-@mixin rect-logo($width: $logo-size-default * 1.5, $height: $logo-size-default) {
+@mixin rect-logo($width: vars.$logo-size-default * 1.5, $height: vars.$logo-size-default) {
   @include logo-base($width, $height);
 }
 
@@ -39,12 +44,15 @@
 @mixin pseudo-element($content: '') {
   content: $content;
   position: absolute;
-  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 // Text logo mixin for wordmark logos
 @mixin text-logo($font-family: 'Arial', $font-weight: bold, $color: var(--logo-black)) {
-  font-family: $font-family, sans-serif;
+  font-family: $font-family;
   font-weight: $font-weight;
   color: $color;
   display: inline-flex;
@@ -70,18 +78,18 @@
 
 // Multi-color stripe mixin (useful for logos with horizontal/vertical stripes)
 @mixin color-stripes($direction: to bottom, $colors...) {
-  $stripe-count: length($colors);
-  $stripe-size: 100% / $stripe-count;
+  $stripe-count: list.length($colors);
+  $stripe-size: math.div(100%, $stripe-count);
   $gradient-stops: ();
-  
+
   @for $i from 1 through $stripe-count {
-    $color: nth($colors, $i);
-    $start: ($i - 1) * $stripe-size;
-    $end: $i * $stripe-size;
-    
-    $gradient-stops: append($gradient-stops, $color $start, comma);
-    $gradient-stops: append($gradient-stops, $color $end, comma);
+    $color: list.nth($colors, $i);
+    $start: math.div(($i - 1) * $stripe-size, 1);
+    $end: math.div($i * $stripe-size, 1);
+
+    $gradient-stops: list.append($gradient-stops, $color $start, comma);
+    $gradient-stops: list.append($gradient-stops, $color $end, comma);
   }
-  
+
   background: linear-gradient($direction, $gradient-stops);
 }

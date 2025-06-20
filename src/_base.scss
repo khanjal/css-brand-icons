@@ -1,38 +1,36 @@
+// Import the mixins module
+@use 'mixins' as mixins;
+
+// Import the variables module
+@use 'variables' as vars;
+
 // Base styles for all logos
 
 .logo {
-  @include logo-base();
+  @include mixins.logo-base();
   box-sizing: border-box;
   
   // Size variants
   &.icon {
-    @include logo-base($logo-size-icon, $logo-size-icon);
+    @include mixins.logo-base(vars.$logo-size-icon, vars.$logo-size-icon);
   }
   
   &.large {
-    @include logo-base($logo-size-large, $logo-size-large);
+    @include mixins.logo-base(vars.$logo-size-large, vars.$logo-size-large);
   }
   
   &.xl {
-    @include logo-base($logo-size-xl, $logo-size-xl);
+    @include mixins.logo-base(vars.$logo-size-xl, vars.$logo-size-xl);
   }
   
   // Accessibility
-  &[role="img"] {
-    // Ensure screen readers can access the logo
-    &:not([aria-label]) {
-      &::after {
-        @include pseudo-element();
-        position: absolute;
-        left: -9999px;
-        content: "Company logo";
-      }
-    }
+  &::before {
+    @include mixins.pseudo-element();
   }
   
   // Hover effects (optional, can be disabled)
   &.hover-effect {
-    @include logo-hover-effect();
+    @include mixins.logo-hover-effect();
   }
   
   // Print styles

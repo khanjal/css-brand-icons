@@ -1,3 +1,5 @@
+@use '../mixins' as mixins;
+
 /**
  * Subway Logo - CSS Interpretation
  * Green and yellow arrow-inspired design
@@ -9,6 +11,7 @@
   position: relative;
   
   &::before {
+    @include mixins.pseudo-element();
     content: '';
     position: absolute;
     top: 30%;

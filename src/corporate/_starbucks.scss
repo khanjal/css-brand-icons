@@ -1,14 +1,16 @@
+@use '../mixins' as mixins;
+
 // Starbucks Logo Styles
 
 .logo.starbucks {
-  @include circle-logo();
+  @include mixins.circle-logo();
   background-color: var(--starbucks-green);
   border: 2px solid var(--starbucks-green);
   position: relative;
   
   // Siren silhouette (simplified)
   &::before {
-    @include pseudo-element();
+    @include mixins.pseudo-element();
     width: 70%;
     height: 80%;
     background-color: var(--starbucks-white);
@@ -37,7 +39,7 @@
   
   // Crown detail
   &::after {
-    @include pseudo-element();
+    @include mixins.pseudo-element();
     width: 40%;
     height: 20%;
     background-color: var(--starbucks-white);

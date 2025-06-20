@@ -1,3 +1,5 @@
+@use '../mixins' as mixins;
+
 /**
  * Taco Bell Logo - CSS Interpretation
  * Purple bell-inspired design
@@ -9,6 +11,7 @@
   position: relative;
   
   &::before {
+    @include mixins.pseudo-element();
     content: '';
     position: absolute;
     top: 25%;

@@ -1,15 +1,18 @@
+@use '../mixins' as mixins;
+@use '../variables' as vars;
+
 // Facebook/Meta Logo Styles
 
 .logo.facebook {
-  @include rounded-square-logo($logo-size-default, 12px);
+  @include mixins.rounded-square-logo(vars.$logo-size-default, 12px);
   background-color: var(--facebook-blue);
   position: relative;
   
   // Facebook 'f' letter
   &::before {
-    @include pseudo-element('f');
-    @include text-logo('Arial', bold, var(--facebook-white));
-    font-size: calc(#{$logo-size-default} * 0.7);
+    @include mixins.pseudo-element('f');
+    @include mixins.text-logo('Arial', bold, var(--facebook-white));
+    font-size: calc(#{vars.$logo-size-default} * 0.7);
     top: 50%;
     left: 45%;
     transform: translate(-50%, -50%);
@@ -18,7 +21,7 @@
   
   // Circle version
   &.circle {
-    @include circle-logo();
+    @include mixins.circle-logo();
   }
   
   // Square version with more rounded corners
@@ -44,47 +47,47 @@
     &::before {
       content: 'f';
       font-family: 'Times New Roman', serif;
-      font-size: calc(#{$logo-size-default} * 0.6);
+      font-size: calc(#{vars.$logo-size-default} * 0.6);
     }
   }
   
   // Size adjustments
   &.icon {
     &::before {
-      font-size: calc(#{$logo-size-icon} * 0.7);
+      font-size: calc(#{vars.$logo-size-icon} * 0.7);
     }
   }
   
   &.large {
     &::before {
-      font-size: calc(#{$logo-size-large} * 0.7);
+      font-size: calc(#{vars.$logo-size-large} * 0.7);
     }
   }
   
   &.xl {
     &::before {
-      font-size: calc(#{$logo-size-xl} * 0.7);
+      font-size: calc(#{vars.$logo-size-xl} * 0.7);
     }
   }
 }
 
 // Meta logo (new branding)
 .logo.meta {
-  @include logo-base();
+  @include mixins.logo-base();
   background: linear-gradient(
     45deg,
     #0467df 0%,
     #0467df 25%,
-    #4c4ff7 50%,
-    #9932cc 75%,
-    #ff6b6b 100%
+    #00a1f1 50%,
+    #0467df 75%,
+    #0467df 100%
   );
   position: relative;
   border-radius: 50%;
   
   // Meta infinity symbol
   &::before {
-    @include pseudo-element();
+    @include mixins.pseudo-element();
     width: 80%;
     height: 40%;
     background-color: var(--logo-white);

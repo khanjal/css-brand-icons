@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Pure CSS library with off-brand, CSS-inspired interpretations of well-known brand logos - no images or trademarked assets required",  "main": "dist/css-brand-icons.min.css",  "scripts": {
     "build": "npm run build:sass && npm run build:minify",
-    "build:sass": "sass src/css-brand-icons.scss dist/css-brand-icons.css --style expanded",
+    "build:sass": "sass --load-path=src src/css-brand-icons.scss dist/css-brand-icons.css --style expanded",
     "build:minify": "sass src/css-brand-icons.scss dist/css-brand-icons.min.css --style compressed",
     "watch": "sass --watch src/css-brand-icons.scss:dist/css-brand-icons.css",
     "dev": "sass --watch src/css-brand-icons.scss:dist/css-brand-icons.css & live-server",

@@ -1,12 +1,15 @@
+// Import the mixins module
+@use '../mixins' as mixins;
+
 // Nike Logo Styles
 
 .logo.nike {
-  @include logo-base();
+  @include mixins.logo-base();
   background-color: transparent;
   
   // Nike Swoosh
   &::before {
-    @include pseudo-element();
+    @include mixins.pseudo-element();
     width: 80%;
     height: 60%;
     background-color: var(--nike-black);
@@ -67,7 +70,7 @@
   
   // Rectangular version for horizontal layouts
   &.horizontal {
-    @include rect-logo(96px, 48px);
+    @include mixins.rect-logo(96px, 48px);
     
     &::before {
       width: 60%;

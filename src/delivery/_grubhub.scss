@@ -1,3 +1,5 @@
+@use '../mixins' as mixins;
+
 /**
  * Grubhub Logo - CSS Interpretation
  * Orange/red circular design with fork-inspired elements
@@ -10,6 +12,7 @@
   overflow: hidden;
   
   &::before {
+    @include mixins.pseudo-element();
     content: '';
     position: absolute;
     top: 30%;

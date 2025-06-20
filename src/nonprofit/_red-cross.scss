@@ -1,7 +1,10 @@
+@use '../mixins' as mixins;
+@use '../variables' as vars;
+
 // Red Cross Logo Styles
 
 .logo.red-cross {
-  @include logo-base();
+  @include mixins.logo-base();
   background-color: var(--red-cross-white);
   border: 2px solid var(--logo-light-gray);
   position: relative;
@@ -9,7 +12,7 @@
   // Red cross symbol
   &::before,
   &::after {
-    @include pseudo-element();
+    @include mixins.pseudo-element();
     background-color: var(--red-cross-red);
     top: 50%;
     left: 50%;
@@ -51,13 +54,13 @@
   
   // Circular version
   &.circle {
-    @include circle-logo();
+    @include mixins.circle-logo();
     border: 3px solid var(--red-cross-red);
     background-color: var(--red-cross-white);
   }
   
   // Square version with rounded corners
   &.rounded {
-    @include rounded-square-logo($logo-size-default, 12px);
+    @include mixins.rounded-square-logo(vars.$logo-size-default, 12px);
   }
 }

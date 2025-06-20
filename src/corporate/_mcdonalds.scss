@@ -1,7 +1,10 @@
+// Correct the path to the mixins module
+@use '../mixins' as mixins;
+
 // McDonald's Logo Styles - Official Golden Arches
 
 .logo.mcdonalds {
-  @include logo-base();
+  @include mixins.logo-base();
   background-color: var(--mcdonalds-red);
   position: relative;
   overflow: hidden;
@@ -9,7 +12,7 @@
   // Golden Arches - Two symmetric arches
   &::before,
   &::after {
-    @include pseudo-element();
+    @include mixins.pseudo-element();
     width: 32%;
     height: 85%;
     background-color: var(--mcdonalds-yellow);

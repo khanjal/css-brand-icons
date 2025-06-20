@@ -1,3 +1,5 @@
+@use '../mixins' as mixins;
+
 /**
  * DoorDash Logo - CSS Interpretation
  * Red delivery bag inspired design
@@ -9,6 +11,7 @@
   position: relative;
   
   &::before {
+    @include mixins.pseudo-element();
     content: '';
     position: absolute;
     top: 20%;

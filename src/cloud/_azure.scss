@@ -1,53 +1,87 @@
-// Microsoft Azure Logo - Off-brand CSS interpretation
-// Blue gradient with geometric shapes
+@use '../mixins' as mixins;
+
+// Microsoft Azure Logo - Improved CSS interpretation
+// Iconic A-shaped symbol with modern gradient
 
 .logo.azure {
-  background: linear-gradient(135deg, #0078D4 0%, #00A4EF 100%);
-  color: white;
+  @include mixins.logo-base();
+  background: linear-gradient(135deg, var(--azure-blue-dark) 0%, var(--azure-blue-light) 100%);
+  position: relative;
+  overflow: hidden;
   
-  // Azure text
+  // Main Azure "A" symbol using clip-path
   &::before {
-    content: 'azure';
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-family: Arial, sans-serif;
-    font-weight: 300;
-    font-size: 0.5em;
+    @include mixins.pseudo-element();
+    width: 60%;
+    height: 70%;
+    top: 15%;
+    left: 20%;
+    background: rgba(255, 255, 255, 0.95);
+    clip-path: polygon(
+      40% 10%,
+      60% 10%,
+      90% 85%,
+      70% 85%,
+      65% 70%,
+      35% 70%,
+      30% 85%,
+      10% 85%
+    );
     z-index: 2;
   }
   
-  // Geometric shape representation
+  // Inner triangle cutout for the "A"
   &::after {
-    content: '';
-    position: absolute;
-    top: 20%;
-    left: 25%;
-    right: 25%;
-    height: 30%;
-    background: rgba(255, 255, 255, 0.9);
-    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-    z-index: 1;
+    @include mixins.pseudo-element();
+    width: 20%;
+    height: 25%;
+    top: 35%;
+    left: 40%;
+    background: var(--azure-blue-dark);
+    clip-path: polygon(20% 0%, 80% 0%, 50% 100%);
+    z-index: 3;
   }
   
-  // Additional geometric elements
+  // Subtle cloud pattern overlay
   background-image: 
-    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 2px, transparent 2px),
-    radial-gradient(circle at 70% 70%, rgba(255,255,255,0.1) 1px, transparent 1px);
-  background-size: 15px 15px, 10px 10px;
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 2px, transparent 2px),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 1px, transparent 1px),
+    radial-gradient(circle at 40% 40%, rgba(255,255,255,0.05) 3px, transparent 3px);
+  background-size: 25px 25px, 15px 15px, 35px 35px;
   
-  // Size adjustments
-  &.icon::before {
-    font-size: 0.4em;
+  // Alternative text-based version
+  &.text {
+    &::before {
+      content: 'azure';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: none;
+      clip-path: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-weight: 300;
+      font-size: 0.55em;
+      text-transform: lowercase;
+      letter-spacing: 0.1em;
+    }
+    
+    &::after {
+      display: none;
+    }
   }
   
-  &.large::before {
-    font-size: 0.7em;
-  }
-  
-  &.xl::before {
-    font-size: 0.8em;
+  // Size variations
+  &.icon {
+    &::before {
+      width: 70%;
+      height: 80%;
+      top: 10%;
+      left: 15%;
+    }
   }
 }

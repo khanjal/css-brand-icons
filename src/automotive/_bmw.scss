@@ -1,7 +1,9 @@
+@use '../mixins' as mixins;
+
 // BMW Logo Styles
 
 .logo.bmw {
-  @include circle-logo();
+  @include mixins.circle-logo();
   background-color: var(--bmw-black);
   border: 3px solid var(--bmw-black);
   position: relative;
@@ -12,7 +14,7 @@
   
   // Create the four quarters
   &::before {
-    @include pseudo-element();
+    @include mixins.pseudo-element();
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -35,7 +37,7 @@
   
   // Add the center dividing lines
   &::after {
-    @include pseudo-element();
+    @include mixins.pseudo-element();
     width: 100%;
     height: 100%;
     top: 3px;

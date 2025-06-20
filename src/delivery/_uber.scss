@@ -1,3 +1,5 @@
+@use '../mixins' as mixins;
+
 /**
  * Uber / Uber Eats Logo - CSS Interpretation
  * Simple geometric circle design
@@ -9,6 +11,7 @@
   position: relative;
   
   &::before {
+    @include mixins.pseudo-element();
     content: '';
     position: absolute;
     top: 25%;

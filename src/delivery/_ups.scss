@@ -1,9 +1,12 @@
+@use '../mixins' as mixins;
+
 // UPS Logo - Off-brand CSS interpretation
 // Brown shield-like shape representing the UPS brand
 
 .logo.ups {
   // Main shield shape
   &::before {
+    @include mixins.pseudo-element();
     content: '';
     position: absolute;
     top: 0;

@@ -1,59 +1,75 @@
-// FedEx Logo - Off-brand CSS interpretation
-// Purple and orange text with arrow symbolism
+@use '../mixins' as mixins;
+
+// FedEx Logo - Improved CSS interpretation
+// Purple "Fed" and orange "Ex" with hidden arrow
 
 .logo.fedex {
-  background: linear-gradient(90deg, #4B0082 0%, #4B0082 60%, #FF8C00 60%, #FF8C00 100%);
-  color: white;
+  @include mixins.logo-base();
+  background: var(--fedex-purple);
+  position: relative;
+  overflow: hidden;
   
-  // FedEx text representation
+  // Purple section for "Fed"
   &::before {
+    @include mixins.pseudo-element();
     content: 'Fed';
     position: absolute;
     top: 50%;
-    left: 20%;
+    left: 30%;
     transform: translate(-50%, -50%);
     color: white;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-size: 0.7em;
-    z-index: 2;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 0.6em;
+    letter-spacing: -0.05em;
+    z-index: 3;
   }
   
+  // Orange section background
   &::after {
+    @include mixins.pseudo-element();
+    width: 45%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: var(--fedex-orange);
+    z-index: 1;
+    
+    // "Ex" text on orange background
     content: 'Ex';
-    position: absolute;
-    top: 50%;
-    right: 20%;
-    transform: translate(50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-size: 0.7em;
-    z-index: 2;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 0.6em;
+    letter-spacing: -0.05em;
   }
   
-  // Arrow representation (hidden arrow between Fed and Ex)
-  background-image: linear-gradient(45deg, transparent 40%, white 45%, white 55%, transparent 60%);
-  background-position: center;
-  background-size: 20px 20px;
+  // Hidden arrow between Fed and Ex (famous FedEx arrow)
+  background-image: 
+    linear-gradient(45deg, transparent 35%, white 40%, white 60%, transparent 65%);
+  background-position: 52% 50%;
+  background-size: 12px 8px;
   background-repeat: no-repeat;
   
-  // Size adjustments
+  // Size variations
   &.icon {
     &::before, &::after {
-      font-size: 0.5em;
+      font-size: 0.45em;
     }
   }
   
   &.large {
     &::before, &::after {
-      font-size: 0.9em;
+      font-size: 0.8em;
     }
   }
   
   &.xl {
     &::before, &::after {
-      font-size: 1.1em;
+      font-size: 1em;
     }
   }
 }

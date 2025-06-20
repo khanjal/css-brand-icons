@@ -1,3 +1,5 @@
+@use '../mixins' as mixins;
+
 /**
  * Burger King Logo - CSS Interpretation
  * Orange and blue circular design with bun-inspired elements
@@ -9,6 +11,7 @@
   position: relative;
   
   &::before {
+    @include mixins.pseudo-element();
     content: '';
     position: absolute;
     top: 15%;

@@ -1,14 +1,17 @@
+@use '../mixins' as mixins;
+@use '../variables' as vars;
+
 // Twitter/X Logo Styles
 
 .logo.twitter {
-  @include logo-base();
+  @include mixins.logo-base();
   background-color: var(--twitter-blue);
   position: relative;
   border-radius: 12px;
   
   // Twitter bird silhouette
   &::before {
-    @include pseudo-element();
+    @include mixins.pseudo-element();
     width: 70%;
     height: 60%;
     background-color: var(--twitter-white);
@@ -40,7 +43,7 @@
   
   // Circle version
   &.circle {
-    @include circle-logo();
+    @include mixins.circle-logo();
   }
   
   // White version for dark backgrounds
@@ -83,15 +86,15 @@
 
 // X (new Twitter branding)
 .logo.x-twitter {
-  @include logo-base();
+  @include mixins.logo-base();
   background-color: var(--twitter-black);
   position: relative;
   
   // X letter
   &::before {
-    @include pseudo-element('𝕏');
-    @include text-logo('Arial', bold, var(--twitter-white));
-    font-size: calc(#{$logo-size-default} * 0.6);
+    @include mixins.pseudo-element('\uD835\uDD4F');
+    @include mixins.text-logo('Arial', bold, var(--twitter-white));
+    font-size: calc(#{vars.$logo-size-default} * 0.6);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -128,19 +131,19 @@
   // Size adjustments
   &.icon {
     &::before {
-      font-size: calc(#{$logo-size-icon} * 0.6);
+      font-size: calc(#{vars.$logo-size-icon} * 0.6);
     }
   }
   
   &.large {
     &::before {
-      font-size: calc(#{$logo-size-large} * 0.6);
+      font-size: calc(#{vars.$logo-size-large} * 0.6);
     }
   }
   
   &.xl {
     &::before {
-      font-size: calc(#{$logo-size-xl} * 0.6);
+      font-size: calc(#{vars.$logo-size-xl} * 0.6);
     }
   }
 }

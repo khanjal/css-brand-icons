@@ -1,3 +1,5 @@
+@use '../mixins' as mixins;
+
 /**
  * Wendy's Logo - CSS Interpretation
  * Red circular design with pigtail-inspired elements
@@ -9,6 +11,7 @@
   position: relative;
   
   &::before {
+    @include mixins.pseudo-element();
     content: '';
     position: absolute;
     top: 25%;
