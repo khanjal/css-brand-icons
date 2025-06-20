@@ -186,23 +186,35 @@ npm run dev
 ```
 css-brand-icons/
 ├── src/
-│   ├── css-brand-icons.scss          # Main SCSS file
-│   ├── _variables.scss           # CSS variables and colors
+│   ├── css-brand-icons.scss     # Main SCSS file
+│   ├── _variables.scss          # CSS variables and colors
 │   ├── _mixins.scss             # Reusable mixins
 │   ├── _base.scss               # Base logo styles
-│   ├── corporate/
-│   │   ├── _mcdonalds.scss      # McDonald's logo styles
-│   │   ├── _coca-cola.scss      # Coca-Cola logo styles
-│   │   └── _nike.scss           # Nike logo styles
-│   ├── technology/
-│   │   └── _apple.scss          # Apple logo styles
-│   ├── nonprofit/
-│   │   └── _red-cross.scss      # Red Cross logo styles
-│   └── automotive/
-│       └── _bmw.scss            # BMW logo styles
+│   ├── corporate/               # Corporate brand logos
+│   │   ├── _burger-king.scss    # Individual brand files
+│   │   ├── _coca-cola.scss
+│   │   ├── _mcdonalds.scss
+│   │   ├── _nike.scss
+│   │   └── ... (more brands)
+│   ├── technology/              # Technology company logos
+│   │   ├── _apple.scss
+│   │   ├── _facebook.scss
+│   │   └── ... (more tech brands)
+│   ├── delivery/                # Delivery service logos
+│   │   ├── _uber.scss
+│   │   ├── _doordash.scss
+│   │   └── ... (more delivery brands)
+│   ├── nonprofit/               # Non-profit organization logos
+│   │   ├── _red-cross.scss
+│   │   └── ... (more non-profits)
+│   ├── automotive/              # Automotive brand logos
+│   │   ├── _bmw.scss
+│   │   └── ... (more automotive brands)
+│   └── [category]/              # Additional categories as needed
+│       └── _[brand-name].scss
 ├── dist/
-│   ├── css-brand-icons.css          # Compiled CSS
-│   └── css-brand-icons.min.css      # Minified CSS
+│   ├── css-brand-icons.css      # Compiled CSS
+│   └── css-brand-icons.min.css  # Minified CSS
 ├── examples/
 │   └── index.html               # Demo page
 └── README.md
