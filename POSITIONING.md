@@ -1,8 +1,8 @@
-# Project Positioning: Off-Brand CSS Logo Library
+# Project Positioning: CSS Brand Icons
 
 ## Overview
 
-World Logos is positioned as an **off-brand, CSS-inspired logo library** that provides recognizable approximations of well-known corporate, non-profit, and organizational logos using pure CSS.
+CSS Brand Icons is positioned as an **off-brand, CSS-inspired brand logo library** that provides recognizable approximations of well-known corporate, non-profit, delivery service, and organizational brand logos using pure CSS.
 
 ## Why "Off-Brand"?
 
@@ -37,7 +37,7 @@ World Logos is positioned as an **off-brand, CSS-inspired logo library** that pr
 ## Marketing Messages
 
 ### Primary Positioning
-> "Pure CSS library with off-brand, CSS-inspired interpretations of well-known logos - perfect for prototypes, demos, and educational projects"
+> "Pure CSS library with off-brand, CSS-inspired interpretations of well-known brand logos - perfect for prototypes, demos, and educational projects"
 
 ### Key Benefits
 - 🎨 **No Images Required**: Pure CSS implementation

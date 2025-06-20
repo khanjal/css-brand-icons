@@ -1,16 +1,16 @@
-# World Logos
+# CSS Brand Icons
 
-[![npm](https://img.shields.io/npm/v/@khanj/world-logos)](https://www.npmjs.com/package/@khanj/world-logos)
+[![npm](https://img.shields.io/npm/v/css-brand-icons)](https://www.npmjs.com/package/css-brand-icons)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A pure CSS library featuring **off-brand, CSS-inspired interpretations** of well-known corporate, non-profit, and organizational logos. Create recognizable logo-style elements using only CSS - no images or trademarked assets required!
+A pure CSS library featuring **off-brand, CSS-inspired interpretations** of well-known corporate, non-profit, and organizational brand logos. Create recognizable brand-style icons using only CSS - no images or trademarked assets required!
 
 ⚠️ **Important**: These are CSS interpretations and approximations, not exact replicas. Perfect for prototypes, demos, and educational projects where you need recognizable logo-inspired designs without using actual trademarked content.
 
 ## 🚀 Install
 
 ```bash
-npm install @khanj/world-logos
+npm install css-brand-icons
 ```
 
 ## 📖 Usage
@@ -21,11 +21,11 @@ Include the CSS file in your HTML:
 
 ```html
 <head>
-  <link rel="stylesheet" href="dist/world-logos.min.css" />
+  <link rel="stylesheet" href="dist/css-brand-icons.min.css" />
 </head>
 
 <body>
-  <!-- Standard logo -->
+  <!-- Standard brand icon -->
   <div class="logo mcdonalds" role="img" aria-label="McDonald's logo"></div>
   
   <!-- Small icon version -->
@@ -152,8 +152,8 @@ Create custom sizes:
 
 ```bash
 # Clone the repository
-git clone https://github.com/khanjal/world-logos.git
-cd world-logos
+git clone https://github.com/khanjal/css-brand-icons.git
+cd css-brand-icons
 
 # Install dependencies
 npm install
@@ -171,9 +171,9 @@ npm run dev
 ### Project Structure
 
 ```
-world-logos/
+css-brand-icons/
 ├── src/
-│   ├── world-logos.scss          # Main SCSS file
+│   ├── css-brand-icons.scss          # Main SCSS file
 │   ├── _variables.scss           # CSS variables and colors
 │   ├── _mixins.scss             # Reusable mixins
 │   ├── _base.scss               # Base logo styles
@@ -188,8 +188,8 @@ world-logos/
 │   └── automotive/
 │       └── _bmw.scss            # BMW logo styles
 ├── dist/
-│   ├── world-logos.css          # Compiled CSS
-│   └── world-logos.min.css      # Minified CSS
+│   ├── css-brand-icons.css          # Compiled CSS
+│   └── css-brand-icons.min.css      # Minified CSS
 ├── examples/
 │   └── index.html               # Demo page
 └── README.md
