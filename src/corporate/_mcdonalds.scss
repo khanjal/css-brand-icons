@@ -1,42 +1,46 @@
-// McDonald's Logo Styles
+// McDonald's Logo Styles - Official Golden Arches
 
 .logo.mcdonalds {
   @include logo-base();
   background-color: var(--mcdonalds-red);
   position: relative;
+  overflow: hidden;
   
-  // Golden Arches
+  // Golden Arches - Two symmetric arches
   &::before,
   &::after {
     @include pseudo-element();
-    width: 60%;
-    height: 80%;
+    width: 32%;
+    height: 85%;
     background-color: var(--mcdonalds-yellow);
     border-radius: 50% 50% 0 0;
     bottom: 0;
+    transform-origin: bottom center;
   }
   
+  // Left arch
   &::before {
-    left: 5%;
-    transform: rotate(-15deg);
+    left: 18%;
+    transform: rotate(-12deg) skewX(-8deg);
   }
   
+  // Right arch  
   &::after {
-    right: 5%;
-    transform: rotate(15deg);
+    right: 18%;
+    transform: rotate(12deg) skewX(8deg);
   }
   
-  // Vintage 1960s version (single arch)
+  // Vintage 1960s version (single arch design)
   &.vintage-1960 {
     background-color: var(--mcdonalds-yellow);
     
     &::before {
-      width: 80%;
+      width: 70%;
       height: 90%;
-      left: 10%;
+      left: 15%;
       background-color: var(--mcdonalds-red);
       transform: none;
-      border-radius: 50% 50% 0 0;
+      border-radius: 60% 60% 0 0;
     }
     
     &::after {
@@ -44,40 +48,72 @@
     }
   }
   
-  // 1970s version with different proportions
+  // 1970s version with different arch proportions
   &.vintage-1970 {
     &::before,
     &::after {
-      width: 50%;
-      height: 85%;
+      width: 28%;
+      height: 80%;
+      border-radius: 45% 45% 0 0;
     }
     
     &::before {
-      left: 8%;
-      transform: rotate(-20deg);
+      left: 20%;
+      transform: rotate(-15deg) skewX(-5deg);
     }
     
     &::after {
-      right: 8%;
-      transform: rotate(20deg);
+      right: 20%;
+      transform: rotate(15deg) skewX(5deg);
     }
   }
   
-  // Icon size adjustments
+  // Size adjustments for different logo sizes
   &.icon {
     &::before,
     &::after {
-      width: 55%;
-      height: 75%;
+      width: 30%;
+      height: 80%;
+    }
+    
+    &::before {
+      left: 20%;
+    }
+    
+    &::after {
+      right: 20%;
     }
   }
   
-  // Large size adjustments
   &.large {
     &::before,
     &::after {
-      width: 65%;
-      height: 82%;
+      width: 34%;
+      height: 87%;
+    }
+    
+    &::before {
+      left: 17%;
+    }
+    
+    &::after {
+      right: 17%;
+    }
+  }
+  
+  &.xl {
+    &::before,
+    &::after {
+      width: 35%;
+      height: 88%;
+    }
+    
+    &::before {
+      left: 16%;
+    }
+    
+    &::after {
+      right: 16%;
     }
   }
 }
