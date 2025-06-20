@@ -40,16 +40,18 @@ The workflow supports two publishing methods:
    - Update package.json version
    - Publish to NPM
 
-#### Method 2: Manual Dispatch
-1. Go to Actions → "Publish to NPM"
+#### Method 2: Manual Dispatch (Emergency Use Only)
+1. Go to Actions → "Manual Publish to NPM"
 2. Click "Run workflow"
 3. Optionally specify a version number
 4. Click "Run workflow"
 
+**Note**: The manual workflow will also create a GitHub release automatically.
+
 ## Workflow Files Created
 
-- `.github/workflows/ci-cd.yml` - Main CI/CD pipeline with testing and publishing
-- `.github/workflows/publish.yml` - Simple publish-only workflow
+- `.github/workflows/ci-cd.yml` - Main CI/CD pipeline with testing and automatic publishing on releases
+- `.github/workflows/publish.yml` - Manual publish workflow (emergency use only)
 - `.npmignore` - Controls which files are included in the NPM package
 
 ## Package Configuration
