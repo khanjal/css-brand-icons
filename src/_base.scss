@@ -1,0 +1,70 @@
+// Base styles for all logos
+
+.logo {
+  @include logo-base();
+  box-sizing: border-box;
+  
+  // Size variants
+  &.icon {
+    @include logo-base($logo-size-icon, $logo-size-icon);
+  }
+  
+  &.large {
+    @include logo-base($logo-size-large, $logo-size-large);
+  }
+  
+  &.xl {
+    @include logo-base($logo-size-xl, $logo-size-xl);
+  }
+  
+  // Accessibility
+  &[role="img"] {
+    // Ensure screen readers can access the logo
+    &:not([aria-label]) {
+      &::after {
+        @include pseudo-element();
+        position: absolute;
+        left: -9999px;
+        content: "Company logo";
+      }
+    }
+  }
+  
+  // Hover effects (optional, can be disabled)
+  &.hover-effect {
+    @include logo-hover-effect();
+  }
+  
+  // Print styles
+  @media print {
+    &::after {
+      content: "[Logo: " attr(aria-label) "]";
+      position: static;
+      display: inline;
+      font-size: 12px;
+      color: #000;
+    }
+    
+    // Hide the actual logo in print
+    background: none !important;
+    border: 1px solid #000;
+    
+    &::before {
+      display: none;
+    }
+  }
+  
+  // High contrast mode support
+  @media (prefers-contrast: high) {
+    border: 1px solid currentColor;
+  }
+  
+  // Reduced motion support
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    
+    &:hover {
+      transform: none;
+    }
+  }
+}

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Logos - CSS Logo Library Demo</title>
+    <link rel="stylesheet" href="../dist/world-logos.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+            margin-top: 3rem;
+        }
+        
+        .demo-section {
+            margin: 2rem 0;
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .logo-item {
+            text-align: center;
+            padding: 1.5rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+        
+        .logo-item h3 {
+            margin: 1rem 0 0.5rem 0;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        
+        .logo-item p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .size-demo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .code-example {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+        
+        .dark-bg {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .historical-versions {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .version-item {
+            text-align: center;
+        }
+        
+        .version-item span {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌍 World Logos</h1>
+        <p style="text-align: center; font-size: 1.2rem; color: #666;">
+            Pure CSS logos for corporate, non-profit, and organizational brands
+        </p>
+        
+        <h2>📏 Size Variations</h2>
+        <div class="demo-section">
+            <p>All logos support multiple sizes: <code>icon</code>, <code>default</code>, <code>large</code>, and <code>xl</code></p>
+            <div class="size-demo">
+                <div>
+                    <div class="logo icon mcdonalds" role="img" aria-label="McDonald's logo"></div>
+                    <br><small>icon (32px)</small>
+                </div>
+                <div>
+                    <div class="logo mcdonalds" role="img" aria-label="McDonald's logo"></div>
+                    <br><small>default (64px)</small>
+                </div>
+                <div>
+                    <div class="logo large mcdonalds" role="img" aria-label="McDonald's logo"></div>
+                    <br><small>large (128px)</small>
+                </div>
+                <div>
+                    <div class="logo xl mcdonalds" role="img" aria-label="McDonald's logo"></div>
+                    <br><small>xl (256px)</small>
+                </div>
+            </div>
+            <div class="code-example">
+&lt;div class="logo icon mcdonalds"&gt;&lt;/div&gt;
+&lt;div class="logo mcdonalds"&gt;&lt;/div&gt;
+&lt;div class="logo large mcdonalds"&gt;&lt;/div&gt;
+&lt;div class="logo xl mcdonalds"&gt;&lt;/div&gt;
+            </div>
+        </div>
+        
+        <h2>🏢 Corporate Logos</h2>        <div class="logo-grid">
+            <div class="logo-item">
+                <div class="logo mcdonalds" role="img" aria-label="McDonald's logo"></div>
+                <h3>McDonald's</h3>
+                <p>Golden arches fast food logo</p>
+                <div class="code-example">&lt;div class="logo mcdonalds"&gt;&lt;/div&gt;</div>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo coca-cola" role="img" aria-label="Coca-Cola logo"></div>
+                <h3>Coca-Cola</h3>
+                <p>Classic script logo</p>
+                <div class="code-example">&lt;div class="logo coca-cola"&gt;&lt;/div&gt;</div>
+            </div>
+            
+            <div class="logo-item">
+                <div class="logo nike" role="img" aria-label="Nike logo"></div>
+                <h3>Nike</h3>
+                <p>Iconic swoosh sportswear logo</p>
+                <div class="code-example">&lt;div class="logo nike"&gt;&lt;/div&gt;</div>
+            </div>
+        </div>
+        
+        <h2>💻 Technology Logos</h2>
+        <div class="logo-grid">
+            <div class="logo-item">
+                <div class="logo apple" role="img" aria-label="Apple logo">
+                    <div class="apple-leaf"></div>
+                </div>
+                <h3>Apple</h3>
+                <p>Bitten apple technology logo</p>
+                <div class="code-example">
+&lt;div class="logo apple"&gt;
+    &lt;div class="apple-leaf"&gt;&lt;/div&gt;
+&lt;/div&gt;
+                </div>
+            </div>
+        </div>
+        
+        <h2>🏥 Non-Profit Organizations</h2>
+        <div class="logo-grid">
+            <div class="logo-item">
+                <div class="logo red-cross" role="img" aria-label="Red Cross logo"></div>
+                <h3>Red Cross</h3>
+                <p>International humanitarian organization</p>
+                <div class="code-example">&lt;div class="logo red-cross"&gt;&lt;/div&gt;</div>
+            </div>
+        </div>
+        
+        <h2>🚗 Automotive Logos</h2>
+        <div class="logo-grid">
+            <div class="logo-item">
+                <div class="logo bmw" role="img" aria-label="BMW logo"></div>
+                <h3>BMW</h3>
+                <p>Bavarian Motor Works roundel</p>
+                <div class="code-example">&lt;div class="logo bmw"&gt;&lt;/div&gt;</div>
+            </div>
+        </div>
+        
+        <h2>🕰️ Historical Versions</h2>
+        <div class="demo-section">
+            <h3>McDonald's Evolution</h3>
+            <div class="historical-versions">
+                <div class="version-item">
+                    <div class="logo mcdonalds vintage-1960" role="img" aria-label="McDonald's 1960s logo"></div>
+                    <span>1960s</span>
+                </div>
+                <div class="version-item">
+                    <div class="logo mcdonalds vintage-1970" role="img" aria-label="McDonald's 1970s logo"></div>
+                    <span>1970s</span>
+                </div>
+                <div class="version-item">
+                    <div class="logo mcdonalds" role="img" aria-label="McDonald's modern logo"></div>
+                    <span>Modern</span>
+                </div>
+            </div>
+            
+            <h3>Coca-Cola Evolution</h3>
+            <div class="historical-versions">
+                <div class="version-item">
+                    <div class="logo coca-cola vintage-1886" role="img" aria-label="Coca-Cola 1886 logo"></div>
+                    <span>1886 Original</span>
+                </div>
+                <div class="version-item">
+                    <div class="logo coca-cola classic" role="img" aria-label="Coca-Cola classic logo"></div>
+                    <span>Classic Ribbon</span>
+                </div>
+                <div class="version-item">
+                    <div class="logo coca-cola" role="img" aria-label="Coca-Cola modern logo"></div>
+                    <span>Modern</span>
+                </div>
+            </div>
+            
+            <h3>Apple Evolution</h3>
+            <div class="historical-versions">
+                <div class="version-item">
+                    <div class="logo apple vintage-1976" role="img" aria-label="Apple 1976 rainbow logo">
+                        <div class="apple-leaf"></div>
+                    </div>
+                    <span>1976 Rainbow</span>
+                </div>
+                <div class="version-item">
+                    <div class="logo apple silver" role="img" aria-label="Apple silver logo">
+                        <div class="apple-leaf"></div>
+                    </div>
+                    <span>Silver Era</span>
+                </div>
+                <div class="version-item">
+                    <div class="logo apple" role="img" aria-label="Apple modern logo">
+                        <div class="apple-leaf"></div>
+                    </div>
+                    <span>Modern</span>
+                </div>
+            </div>
+        </div>
+        
+        <h2>🎨 Color Variations</h2>
+        <div class="demo-section">
+            <h3>Nike Color Options</h3>
+            <div class="size-demo">
+                <div>
+                    <div class="logo nike" role="img" aria-label="Nike black logo"></div>
+                    <br><small>Black (default)</small>
+                </div>
+                <div class="dark-bg">
+                    <div class="logo nike white" role="img" aria-label="Nike white logo"></div>
+                    <br><small>White</small>
+                </div>
+            </div>
+            
+            <h3>BMW Variations</h3>
+            <div class="size-demo">
+                <div>
+                    <div class="logo bmw" role="img" aria-label="BMW color logo"></div>
+                    <br><small>Color</small>
+                </div>
+                <div>
+                    <div class="logo bmw monochrome" role="img" aria-label="BMW monochrome logo"></div>
+                    <br><small>Monochrome</small>
+                </div>
+            </div>
+        </div>
+        
+        <h2>📱 Responsive Design</h2>
+        <div class="demo-section">
+            <p>Logos automatically scale on smaller screens. Large and XL logos become smaller on mobile devices.</p>
+            <p>Try resizing your browser window to see the responsive behavior!</p>
+        </div>
+        
+        <h2>♿ Accessibility</h2>
+        <div class="demo-section">
+            <p>All logos include proper ARIA labels and support for:</p>
+            <ul>
+                <li>Screen readers</li>
+                <li>High contrast mode</li>
+                <li>Reduced motion preferences</li>
+                <li>Print styles</li>
+            </ul>
+            <div class="code-example">
+&lt;div class="logo mcdonalds" role="img" aria-label="McDonald's logo"&gt;&lt;/div&gt;
+            </div>
+        </div>
+        
+        <footer style="margin-top: 3rem; text-align: center; color: #666; border-top: 1px solid #eee; padding-top: 2rem;">
+            <p>World Logos - Pure CSS Logo Library</p>
+            <p>Made with ❤️ and CSS</p>
+        </footer>
+    </div>
+</body>
+</html>

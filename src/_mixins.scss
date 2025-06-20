@@ -1,0 +1,87 @@
+// Mixins for common logo patterns
+
+// Basic logo shape mixin
+@mixin logo-base($width: $logo-size-default, $height: $logo-size-default) {
+  width: $width;
+  height: $height;
+  display: inline-block;
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// Circle mixin for circular logos
+@mixin circle-logo($size: $logo-size-default) {
+  @include logo-base($size, $size);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+// Square logo with rounded corners
+@mixin rounded-square-logo($size: $logo-size-default, $radius: 8px) {
+  @include logo-base($size, $size);
+  border-radius: $radius;
+  overflow: hidden;
+}
+
+// Rectangular logo
+@mixin rect-logo($width: $logo-size-default * 1.5, $height: $logo-size-default) {
+  @include logo-base($width, $height);
+}
+
+// Gradient mixin for logos with gradients
+@mixin logo-gradient($direction, $colors...) {
+  background: linear-gradient($direction, $colors);
+}
+
+// Pseudo-element helper for complex shapes
+@mixin pseudo-element($content: '') {
+  content: $content;
+  position: absolute;
+  display: block;
+}
+
+// Text logo mixin for wordmark logos
+@mixin text-logo($font-family: 'Arial', $font-weight: bold, $color: var(--logo-black)) {
+  font-family: $font-family, sans-serif;
+  font-weight: $font-weight;
+  color: $color;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+}
+
+// Shadow mixin for logos that need depth
+@mixin logo-shadow($x: 0, $y: 2px, $blur: 4px, $color: rgba(0, 0, 0, 0.1)) {
+  box-shadow: $x $y $blur $color;
+}
+
+// Hover effect mixin
+@mixin logo-hover-effect($scale: 1.05, $duration: 0.2s) {
+  transition: transform $duration ease-in-out;
+  
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+// Multi-color stripe mixin (useful for logos with horizontal/vertical stripes)
+@mixin color-stripes($direction: to bottom, $colors...) {
+  $stripe-count: length($colors);
+  $stripe-size: 100% / $stripe-count;
+  $gradient-stops: ();
+  
+  @for $i from 1 through $stripe-count {
+    $color: nth($colors, $i);
+    $start: ($i - 1) * $stripe-size;
+    $end: $i * $stripe-size;
+    
+    $gradient-stops: append($gradient-stops, $color $start, comma);
+    $gradient-stops: append($gradient-stops, $color $end, comma);
+  }
+  
+  background: linear-gradient($direction, $gradient-stops);
+}

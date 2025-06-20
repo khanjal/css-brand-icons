@@ -1,0 +1,83 @@
+// McDonald's Logo Styles
+
+.logo.mcdonalds {
+  @include logo-base();
+  background-color: var(--mcdonalds-red);
+  position: relative;
+  
+  // Golden Arches
+  &::before,
+  &::after {
+    @include pseudo-element();
+    width: 60%;
+    height: 80%;
+    background-color: var(--mcdonalds-yellow);
+    border-radius: 50% 50% 0 0;
+    bottom: 0;
+  }
+  
+  &::before {
+    left: 5%;
+    transform: rotate(-15deg);
+  }
+  
+  &::after {
+    right: 5%;
+    transform: rotate(15deg);
+  }
+  
+  // Vintage 1960s version (single arch)
+  &.vintage-1960 {
+    background-color: var(--mcdonalds-yellow);
+    
+    &::before {
+      width: 80%;
+      height: 90%;
+      left: 10%;
+      background-color: var(--mcdonalds-red);
+      transform: none;
+      border-radius: 50% 50% 0 0;
+    }
+    
+    &::after {
+      display: none;
+    }
+  }
+  
+  // 1970s version with different proportions
+  &.vintage-1970 {
+    &::before,
+    &::after {
+      width: 50%;
+      height: 85%;
+    }
+    
+    &::before {
+      left: 8%;
+      transform: rotate(-20deg);
+    }
+    
+    &::after {
+      right: 8%;
+      transform: rotate(20deg);
+    }
+  }
+  
+  // Icon size adjustments
+  &.icon {
+    &::before,
+    &::after {
+      width: 55%;
+      height: 75%;
+    }
+  }
+  
+  // Large size adjustments
+  &.large {
+    &::before,
+    &::after {
+      width: 65%;
+      height: 82%;
+    }
+  }
+}

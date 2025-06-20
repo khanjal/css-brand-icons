@@ -1,0 +1,66 @@
+// World Logos - Pure CSS Logo Library
+// Variables and Color Definitions
+
+// Base sizes
+$logo-size-default: 64px;
+$logo-size-icon: 32px;
+$logo-size-large: 128px;
+$logo-size-xl: 256px;
+
+// Common brand colors
+:root {
+  // McDonald's
+  --mcdonalds-red: #da291c;
+  --mcdonalds-yellow: #ffc72c;
+  --mcdonalds-golden: #ffb81c;
+  
+  // Coca-Cola
+  --coca-cola-red: #f40009;
+  --coca-cola-white: #ffffff;
+  
+  // Nike
+  --nike-black: #111111;
+  --nike-white: #ffffff;
+  
+  // Apple
+  --apple-gray: #555555;
+  --apple-silver: #a6a6a6;
+  --apple-rainbow-red: #61bb46;
+  --apple-rainbow-orange: #fdb827;
+  --apple-rainbow-yellow: #f5821f;
+  --apple-rainbow-green: #e03a3e;
+  --apple-rainbow-blue: #963d97;
+  --apple-rainbow-purple: #009ddc;
+  
+  // Google
+  --google-blue: #4285f4;
+  --google-red: #ea4335;
+  --google-yellow: #fbbc05;
+  --google-green: #34a853;
+  
+  // Microsoft
+  --microsoft-red: #f25022;
+  --microsoft-green: #7fba00;
+  --microsoft-blue: #00a4ef;
+  --microsoft-yellow: #ffb900;
+  
+  // Red Cross
+  --red-cross-red: #ed1c24;
+  --red-cross-white: #ffffff;
+  
+  // BMW
+  --bmw-blue: #0066b2;
+  --bmw-white: #ffffff;
+  --bmw-black: #000000;
+  
+  // Mercedes
+  --mercedes-silver: #00adef;
+  --mercedes-black: #000000;
+  
+  // Common colors
+  --logo-white: #ffffff;
+  --logo-black: #000000;
+  --logo-gray: #666666;
+  --logo-light-gray: #cccccc;
+  --logo-dark-gray: #333333;
+}

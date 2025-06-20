@@ -1,0 +1,76 @@
+// Coca-Cola Logo Styles
+
+.logo.coca-cola {
+  @include rect-logo(96px, 48px);
+  background-color: var(--coca-cola-red);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  // Coca-Cola script text (simplified representation)
+  &::before {
+    @include pseudo-element('Coca-Cola');
+    @include text-logo('Georgia', bold, var(--coca-cola-white));
+    font-size: calc(#{$logo-size-default} * 0.25);
+    font-style: italic;
+    letter-spacing: -1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+  
+  // Vintage 1886 version (simpler text)
+  &.vintage-1886 {
+    background-color: #8B0000; // Darker red
+    border: 2px solid var(--coca-cola-white);
+    
+    &::before {
+      content: 'Coca Cola';
+      font-family: 'Times New Roman', serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: calc(#{$logo-size-default} * 0.2);
+      text-shadow: none;
+    }
+  }
+  
+  // Classic ribbon design
+  &.classic {
+    background: linear-gradient(45deg, 
+      var(--coca-cola-red) 0%, 
+      #ff4444 50%, 
+      var(--coca-cola-red) 100%
+    );
+    border-radius: 25px;
+    @include logo-shadow(0, 3px, 6px, rgba(0,0,0,0.2));
+    
+    &::before {
+      font-size: calc(#{$logo-size-default} * 0.22);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+  }
+  
+  // Size adjustments
+  &.icon {
+    @include rect-logo(60px, 30px);
+    
+    &::before {
+      font-size: calc(#{$logo-size-icon} * 0.3);
+    }
+  }
+  
+  &.large {
+    @include rect-logo(192px, 96px);
+    
+    &::before {
+      font-size: calc(#{$logo-size-large} * 0.25);
+    }
+  }
+  
+  &.xl {
+    @include rect-logo(384px, 192px);
+    
+    &::before {
+      font-size: calc(#{$logo-size-xl} * 0.25);
+    }
+  }
+}

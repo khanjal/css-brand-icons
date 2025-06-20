@@ -1,0 +1,48 @@
+{
+  "name": "@khanj/world-logos",
+  "version": "1.0.0",
+  "description": "A pure CSS library for displaying corporate, non-profit, and organizational logos in various scales and historical versions",
+  "main": "dist/world-logos.min.css",
+  "scripts": {
+    "build": "npm run build:sass && npm run build:minify",
+    "build:sass": "sass src/world-logos.scss dist/world-logos.css --style expanded",
+    "build:minify": "sass src/world-logos.scss dist/world-logos.min.css --style compressed",
+    "watch": "sass --watch src/world-logos.scss:dist/world-logos.css",
+    "dev": "sass --watch src/world-logos.scss:dist/world-logos.css & live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css",
+    "logos",
+    "corporate",
+    "brands",
+    "nonprofit",
+    "organizations",
+    "pure-css",
+    "scalable",
+    "historical",
+    "vintage"
+  ],  "author": "khanjal",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanjal/world-logos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/khanjal/world-logos/issues"
+  },
+  "homepage": "https://github.com/khanjal/world-logos#readme",
+  "devDependencies": {
+    "sass": "^1.69.0",
+    "live-server": "^1.2.2"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

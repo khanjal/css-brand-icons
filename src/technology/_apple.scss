@@ -1,0 +1,87 @@
+// Apple Logo Styles
+
+.logo.apple {
+  @include logo-base();
+  background-color: transparent;
+  
+  // Apple shape
+  &::before {
+    @include pseudo-element();
+    width: 75%;
+    height: 85%;
+    background-color: var(--apple-gray);
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    // Apple shape using border-radius
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    
+    // Bite mark
+    box-shadow: inset 15% 20% 0 -10% transparent;
+  }
+  
+  // Bite mark as separate element
+  &::after {
+    @include pseudo-element();
+    width: 25%;
+    height: 25%;
+    background-color: var(--logo-white);
+    border-radius: 50%;
+    top: 25%;
+    right: 18%;
+  }
+  
+  // Leaf/stem
+  .apple-leaf {
+    position: absolute;
+    width: 15%;
+    height: 20%;
+    background-color: var(--apple-gray);
+    top: 5%;
+    right: 35%;
+    border-radius: 50% 10% 50% 10%;
+    transform: rotate(45deg);
+  }
+  
+  // Silver/white version
+  &.silver {
+    &::before {
+      background-color: var(--apple-silver);
+    }
+    
+    .apple-leaf {
+      background-color: var(--apple-silver);
+    }
+  }
+  
+  // Vintage 1976 rainbow version
+  &.vintage-1976 {
+    &::before {
+      @include color-stripes(
+        to bottom,
+        var(--apple-rainbow-green),
+        var(--apple-rainbow-yellow),
+        var(--apple-rainbow-orange),
+        var(--apple-rainbow-red),
+        var(--apple-rainbow-purple),
+        var(--apple-rainbow-blue)
+      );
+    }
+    
+    .apple-leaf {
+      background-color: var(--apple-rainbow-green);
+    }
+  }
+  
+  // Black version
+  &.black {
+    &::before {
+      background-color: var(--logo-black);
+    }
+    
+    .apple-leaf {
+      background-color: var(--logo-black);
+    }
+  }
+}

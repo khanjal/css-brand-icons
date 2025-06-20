@@ -1,0 +1,85 @@
+// BMW Logo Styles
+
+.logo.bmw {
+  @include circle-logo();
+  background-color: var(--bmw-black);
+  border: 3px solid var(--bmw-black);
+  position: relative;
+  overflow: visible;
+  
+  // Outer ring with BMW text would go here in a more complex implementation
+  // For now, we'll focus on the iconic blue and white quarters
+  
+  // Create the four quarters
+  &::before {
+    @include pseudo-element();
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: 
+      linear-gradient(45deg, 
+        var(--bmw-white) 0%, 
+        var(--bmw-white) 25%, 
+        var(--bmw-blue) 25%, 
+        var(--bmw-blue) 50%,
+        var(--bmw-white) 50%,
+        var(--bmw-white) 75%,
+        var(--bmw-blue) 75%,
+        var(--bmw-blue) 100%
+      );
+    top: 3px;
+    left: 3px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+  }
+  
+  // Add the center dividing lines
+  &::after {
+    @include pseudo-element();
+    width: 100%;
+    height: 100%;
+    top: 3px;
+    left: 3px;
+    border-radius: 50%;
+    background: 
+      linear-gradient(0deg, transparent 48%, var(--bmw-black) 48%, var(--bmw-black) 52%, transparent 52%),
+      linear-gradient(90deg, transparent 48%, var(--bmw-black) 48%, var(--bmw-black) 52%, transparent 52%);
+  }
+  
+  // Vintage 1917 version (simpler design)
+  &.vintage-1917 {
+    border-color: var(--logo-black);
+    
+    &::before {
+      background: 
+        conic-gradient(
+          var(--bmw-blue) 0deg 90deg,
+          var(--bmw-white) 90deg 180deg,
+          var(--bmw-blue) 180deg 270deg,
+          var(--bmw-white) 270deg 360deg
+        );
+    }
+  }
+  
+  // Monochrome version
+  &.monochrome {
+    background-color: var(--logo-white);
+    border-color: var(--logo-black);
+    
+    &::before {
+      background: 
+        conic-gradient(
+          var(--logo-black) 0deg 90deg,
+          var(--logo-white) 90deg 180deg,
+          var(--logo-black) 180deg 270deg,
+          var(--logo-white) 270deg 360deg
+        );
+    }
+    
+    &::after {
+      background: 
+        linear-gradient(0deg, transparent 48%, var(--logo-black) 48%, var(--logo-black) 52%, transparent 52%),
+        linear-gradient(90deg, transparent 48%, var(--logo-black) 48%, var(--logo-black) 52%, transparent 52%);
+    }
+  }
+}

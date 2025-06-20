@@ -1,0 +1,60 @@
+/*!
+ * World Logos v1.0.0
+ * Pure CSS library for corporate, non-profit, and organizational logos
+ * https://github.com/khanjal/world-logos
+ * 
+ * Copyright 2025 khanjal
+ * Licensed under MIT
+ */
+
+// Import base files
+@import 'variables';
+@import 'mixins';
+@import 'base';
+
+// Import corporate logos
+@import 'corporate/mcdonalds';
+@import 'corporate/nike';
+@import 'corporate/coca-cola';
+
+// Import technology logos
+@import 'technology/apple';
+
+// Import non-profit logos
+@import 'nonprofit/red-cross';
+
+// Import automotive logos
+@import 'automotive/bmw';
+
+// Utility classes
+.logo-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  
+  &.center {
+    justify-content: center;
+  }
+  
+  &.left {
+    justify-content: flex-start;
+  }
+  
+  &.right {
+    justify-content: flex-end;
+  }
+}
+
+// Responsive behavior
+@media (max-width: 768px) {
+  .logo {
+    &.large {
+      @include logo-base($logo-size-default, $logo-size-default);
+    }
+    
+    &.xl {
+      @include logo-base($logo-size-large, $logo-size-large);
+    }
+  }
+}

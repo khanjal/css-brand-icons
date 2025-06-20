@@ -1,0 +1,63 @@
+// Red Cross Logo Styles
+
+.logo.red-cross {
+  @include logo-base();
+  background-color: var(--red-cross-white);
+  border: 2px solid var(--logo-light-gray);
+  position: relative;
+  
+  // Red cross symbol
+  &::before,
+  &::after {
+    @include pseudo-element();
+    background-color: var(--red-cross-red);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  // Vertical bar
+  &::before {
+    width: 25%;
+    height: 70%;
+  }
+  
+  // Horizontal bar
+  &::after {
+    width: 70%;
+    height: 25%;
+  }
+  
+  // Original Geneva Convention design (simpler)
+  &.original {
+    border: 1px solid var(--logo-black);
+    
+    &::before,
+    &::after {
+      background-color: var(--red-cross-red);
+    }
+    
+    // Thinner cross
+    &::before {
+      width: 20%;
+      height: 60%;
+    }
+    
+    &::after {
+      width: 60%;
+      height: 20%;
+    }
+  }
+  
+  // Circular version
+  &.circle {
+    @include circle-logo();
+    border: 3px solid var(--red-cross-red);
+    background-color: var(--red-cross-white);
+  }
+  
+  // Square version with rounded corners
+  &.rounded {
+    @include rounded-square-logo($logo-size-default, 12px);
+  }
+}
