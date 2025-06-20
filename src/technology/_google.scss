@@ -1,0 +1,55 @@
+// Google Logo - Off-brand CSS interpretation
+// Multicolored Google text representation
+
+.logo.google {
+  background: white;
+  color: #4285f4;
+  
+  // Google text with multicolored letters
+  &::before {
+    content: 'Google';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 0.7em;
+    z-index: 2;
+    background: linear-gradient(
+      to right,
+      #4285f4 0%, #4285f4 16.66%,    /* G - Blue */
+      #ea4335 16.66%, #ea4335 33.33%, /* o - Red */
+      #fbbc04 33.33%, #fbbc04 50%,    /* o - Yellow */
+      #4285f4 50%, #4285f4 66.66%,    /* g - Blue */
+      #34a853 66.66%, #34a853 83.33%, /* l - Green */
+      #ea4335 83.33%, #ea4335 100%    /* e - Red */
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  
+  // Subtle shadow/border
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  
+  // Size adjustments
+  &.icon::before {
+    font-size: 0.5em;
+  }
+  
+  &.large::before {
+    font-size: 0.9em;
+  }
+  
+  &.xl::before {
+    font-size: 1.1em;
+  }
+  
+  // Hover effect
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+}

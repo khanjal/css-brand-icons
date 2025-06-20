@@ -27,6 +27,12 @@
 @import 'technology/apple';
 @import 'technology/facebook';
 @import 'technology/twitter';
+@import 'technology/google';
+@import 'technology/amazon';
+
+// Import cloud service logos
+@import 'cloud/aws';
+@import 'cloud/azure';
 
 // Import non-profit logos
 @import 'nonprofit/red-cross';
@@ -41,6 +47,8 @@
 @import 'delivery/grubhub';
 @import 'delivery/postmates';
 @import 'delivery/instacart';
+@import 'delivery/ups';
+@import 'delivery/fedex';
 
 // Fast Food Chains
 @import 'corporate/burger-king';

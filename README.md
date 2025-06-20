@@ -108,7 +108,12 @@ Many logos include historical variants:
   - `white` - White version for dark backgrounds
 - **x-twitter** - X (new Twitter) logo
   - `geometric` - Geometric X design
-  - `white` - White version for dark backgrounds
+- **google** - Google multicolored wordmark
+- **amazon** - Amazon smile arrow logo
+
+### Cloud Services
+- **aws** - Amazon Web Services orange cube logo
+- **azure** - Microsoft Azure blue geometric logo
 
 ### Non-Profit Organizations
 - **red-cross** - International Red Cross
@@ -132,6 +137,8 @@ Many logos include historical variants:
 | Grubhub | `grubhub` | Food delivery service |
 | Postmates | `postmates` | Delivery service |
 | Instacart | `instacart` | Grocery delivery service |
+| UPS | `ups` | Package delivery service |
+| FedEx | `fedex` | Express delivery service |
 
 > **Coming Soon**: More logos are being added regularly! Check back for updates or contribute new ones.
 
@@ -199,10 +206,18 @@ css-brand-icons/
 │   ├── technology/              # Technology company logos
 │   │   ├── _apple.scss
 │   │   ├── _facebook.scss
+│   │   ├── _google.scss
+│   │   ├── _amazon.scss
 │   │   └── ... (more tech brands)
+│   ├── cloud/                   # Cloud service provider logos
+│   │   ├── _aws.scss
+│   │   ├── _azure.scss
+│   │   └── ... (more cloud providers)
 │   ├── delivery/                # Delivery service logos
 │   │   ├── _uber.scss
 │   │   ├── _doordash.scss
+│   │   ├── _ups.scss
+│   │   ├── _fedex.scss
 │   │   └── ... (more delivery brands)
 │   ├── nonprofit/               # Non-profit organization logos
 │   │   ├── _red-cross.scss

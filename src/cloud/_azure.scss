@@ -1,0 +1,53 @@
+// Microsoft Azure Logo - Off-brand CSS interpretation
+// Blue gradient with geometric shapes
+
+.logo.azure {
+  background: linear-gradient(135deg, #0078D4 0%, #00A4EF 100%);
+  color: white;
+  
+  // Azure text
+  &::before {
+    content: 'azure';
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: 300;
+    font-size: 0.5em;
+    z-index: 2;
+  }
+  
+  // Geometric shape representation
+  &::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    right: 25%;
+    height: 30%;
+    background: rgba(255, 255, 255, 0.9);
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    z-index: 1;
+  }
+  
+  // Additional geometric elements
+  background-image: 
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 2px, transparent 2px),
+    radial-gradient(circle at 70% 70%, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 15px 15px, 10px 10px;
+  
+  // Size adjustments
+  &.icon::before {
+    font-size: 0.4em;
+  }
+  
+  &.large::before {
+    font-size: 0.7em;
+  }
+  
+  &.xl::before {
+    font-size: 0.8em;
+  }
+}

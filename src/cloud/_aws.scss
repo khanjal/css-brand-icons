@@ -1,0 +1,54 @@
+// AWS Logo - Off-brand CSS interpretation
+// Orange/yellow cube with smile arrow
+
+.logo.aws {
+  background: linear-gradient(135deg, #FF9900 0%, #FFAD33 100%);
+  color: white;
+  
+  // AWS text
+  &::before {
+    content: 'AWS';
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #232F3E;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 0.7em;
+    z-index: 2;
+  }
+  
+  // Smile arrow
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    left: 20%;
+    right: 20%;
+    height: 2px;
+    background: #232F3E;
+    border-radius: 0 0 15px 15px;
+    z-index: 2;
+  }
+  
+  // Cube representation
+  background-image: 
+    linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
+  background-size: 8px 8px;
+  background-position: 0 0, 4px 4px;
+  
+  // Size adjustments
+  &.icon::before {
+    font-size: 0.5em;
+  }
+  
+  &.large::before {
+    font-size: 0.9em;
+  }
+  
+  &.xl::before {
+    font-size: 1.1em;
+  }
+}

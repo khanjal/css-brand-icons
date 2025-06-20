@@ -1,0 +1,65 @@
+// Amazon Logo - Off-brand CSS interpretation
+// Orange smile arrow from A to Z
+
+.logo.amazon {
+  background: #232F3E;
+  color: #FF9900;
+  
+  // Amazon text
+  &::before {
+    content: 'amazon';
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 0.6em;
+    z-index: 2;
+  }
+  
+  // Smile arrow from A to Z
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 25%;
+    left: 15%;
+    right: 15%;
+    height: 3px;
+    background: #FF9900;
+    border-radius: 0 0 20px 20px;
+    z-index: 2;
+  }
+  
+  // Arrow tip
+  &:hover::after {
+    background: linear-gradient(90deg, #FF9900 0%, #FF9900 85%, transparent 85%);
+    position: relative;
+  }
+  
+  &:hover::after::before {
+    content: '';
+    position: absolute;
+    right: -2px;
+    top: -2px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid #FF9900;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+  }
+  
+  // Size adjustments
+  &.icon::before {
+    font-size: 0.4em;
+  }
+  
+  &.large::before {
+    font-size: 0.8em;
+  }
+  
+  &.xl::before {
+    font-size: 1em;
+  }
+}
